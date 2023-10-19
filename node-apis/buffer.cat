@@ -1,0 +1,5 @@
+module buffer
+  class Buffer
+    pure-0 Buffer.isBuffer (obj: object): boolean
+  end-class Buffer
+end-module buffer

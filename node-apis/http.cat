@@ -1,0 +1,78 @@
+module http
+  class Agent
+    http-0 constructor (options : Object)
+    http-2 createConnection(options : Object, callback : Function<[], void>) : net.Socket
+    http-1 keepSocketAlive(socket : stream.Duplex) : void
+    http-1 reuseSocket(socket : stream.Duplex, request : http.ClientRequest) : void
+    http-0 destroy () : void
+    http-0 getName (options : Object)
+  end-class Agent
+  class ClientRequest extends http.OutgoingMessage
+  http-2 addListener (event: "connect", listener: Function<[http.IncomingMessage, stream.Duplex, Buffer], void>): void
+    http-2 addListener (event: "response", listener: Function<[http.IncomingMessage], void>): void
+    http-2 addListener (event: "socket", listener: Function<[stream.Duplex], void>): void
+    http-0 addListener (event: "timeout", listener: Function<[], void>): void
+    http-2 addListener (event: "upgrade", listener : Function<[http.IncomingMessage, stream.Duplex, Buffer], void>) : void
+    http-0 getRawHeaderNames() : string[]
+    http-0 setNoDelay(noDelay: boolean): unknown
+    http-0 setSocketKeepAlive(enable: boolean, initialDelay: number): unknown
+  end-class ClientRequest
+  class Server extends net.Server
+    http-0 close (callback : Function) : http.Server
+    http-0 closeAllConnections () : [unknown]
+    http-0 closeIdleConnections () : [unknown]
+    http-0 setTimeout (msecs : number, callback : Function) : http.Server
+    http-2 addListener (event: "checkContinue", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void
+    http-2 addListener (event: "checkExpectation", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void
+    http-2 addListener (event: "clientError", requestListener : Function<[Error, stream.Duplex], void>) : void
+    http-2 addListener (event: "connect", listener: Function<[http.IncomingMessage, stream.Duplex, Buffer], void>): void
+    http-2 addListener (event: "connection", listen: Function<[stream.Duplex], void>): void
+    http-2 addListener (event: "dropRequest", requestListener : Function<[http.IncomingMessage, stream.Duplex], void>) : void
+    http-2 addListener (event: "request", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void
+    http-2 addListener (event: "upgrade", requestListener : Function<[http.IncomingMessage, stream.Duplex, Buffer], void>) : void
+  end-class Server
+  class IncomingMessage extends stream.Readable
+    http-0 addListener (event: "aborted", listener: Function<[], void>): void
+    http-0 addListener (event: "close", listener: Function<[], void>): void
+    http-0 error (event: "Error"): http.IncomingMessage
+    http-0 setTimeout (msecs : number, callback : Function) : http.IncomingMessage
+  end-class
+  class ServerResponse extends http.OutgoingMessage
+    http-0 addListener (event: "close", listener: Function<[], void>): void
+    http-0 addListener (event: "finish", listener: Function<[], void>): void
+    http-0 writeHead (statusCode: number, statusMessage: string, headers: Object|Array): ServerResponse
+    http-0 writeContinue (): void
+    http-0 writeEarlyHints (hints: Object, callback: Function<[], void>): void
+    http-0 writeProcessing (): void
+  end-class
+  class OutgoingMessage extends events.EventEmitter
+    http-0 addListener (event: "drain", listener: Function<[], void>): void
+    http-0 addListener (event: "finish", listener: Function<[], void>): void
+    http-0 addListener (event: "prefinish", listener: Function<[], void>): void
+    http-0 appendHeader (name: string, value: string | string[]): this
+    http-0 cork () : unknown
+    http-0 destroy (error: Error): this
+    http-0 end (chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): this
+    http-0 flushHeaders () : unknown
+    http-0 getHeader (name: string) : string
+    http-0 getHeaderNames () : string[]
+    http-0 getHeaders () : Object
+    http-0 hasHeader (name: string): boolean
+    http-0 pipe (): never
+    http-0 removeHeader (name: string): unknown
+    http-0 setHeader (name: string, value: string): this
+    http-0 setHeaders (headers: Headers|Map): this
+    http-0 setTimeout (msec: number, callback: Function<[], void>): this
+    http-0 socket: stream.Duplex
+    http-0 uncork () : unknown
+    http-0 write (chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): boolean
+  end-class OutgoingMessage
+  http-2 createServer (options:Object, requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : http.Server
+  http-2 get (url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void>) : http.ClientRequest
+  http-2 request (url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void) : http.ClientRequest
+  http-0 validateHeaderName (name: string, label: string): void
+  http-0 validateHeaderValue (name: string, value: any): void
+  http-0 setMaxIdleHTTPParsers (max: number): void
+  field-0 METHODS: Array[string]
+  field-0 STATUS_CODES: Array[string]
+end-module http

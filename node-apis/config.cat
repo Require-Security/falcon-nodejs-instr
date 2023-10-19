@@ -1,0 +1,3 @@
+module config
+  file-2 get () : string
+end-module config

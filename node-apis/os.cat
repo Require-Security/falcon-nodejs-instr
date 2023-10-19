@@ -1,0 +1,3 @@
+module os
+  file-1 hostname () : string
+end-module os

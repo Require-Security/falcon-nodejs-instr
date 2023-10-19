@@ -1,0 +1,25 @@
+{
+  "name": "crypto",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "createHash",
+      "signature": "(algorithm: string) : Hash"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "randomUUID",
+      "signature": "() : string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "randomFill",
+      "signature": "(buffer: Buffer) : Buffer"
+    }
+  ]
+}

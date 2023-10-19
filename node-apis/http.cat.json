@@ -1,0 +1,428 @@
+{
+  "name": "http",
+  "modules": [],
+  "classes": [
+    {
+      "name": "Agent",
+      "parent": null,
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "constructor",
+          "signature": "(options : Object)"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "createConnection",
+          "signature": "(options : Object, callback : Function<[], void>) : net.Socket"
+        },
+        {
+          "kind": "http",
+          "level": 1,
+          "name": "keepSocketAlive",
+          "signature": "(socket : stream.Duplex) : void"
+        },
+        {
+          "kind": "http",
+          "level": 1,
+          "name": "reuseSocket",
+          "signature": "(socket : stream.Duplex, request : http.ClientRequest) : void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "destroy",
+          "signature": "() : void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getName",
+          "signature": "(options : Object)"
+        }
+      ]
+    },
+    {
+      "name": "ClientRequest",
+      "parent": "http.OutgoingMessage",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"connect\", listener: Function<[http.IncomingMessage, stream.Duplex, Buffer], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"response\", listener: Function<[http.IncomingMessage], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"socket\", listener: Function<[stream.Duplex], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"timeout\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"upgrade\", listener : Function<[http.IncomingMessage, stream.Duplex, Buffer], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getRawHeaderNames",
+          "signature": "() : string[]"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setNoDelay",
+          "signature": "(noDelay: boolean): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setSocketKeepAlive",
+          "signature": "(enable: boolean, initialDelay: number): unknown"
+        }
+      ]
+    },
+    {
+      "name": "Server",
+      "parent": "net.Server",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "close",
+          "signature": "(callback : Function) : http.Server"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "closeAllConnections",
+          "signature": "() : [unknown]"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "closeIdleConnections",
+          "signature": "() : [unknown]"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setTimeout",
+          "signature": "(msecs : number, callback : Function) : http.Server"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"checkContinue\", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"checkExpectation\", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"clientError\", requestListener : Function<[Error, stream.Duplex], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"connect\", listener: Function<[http.IncomingMessage, stream.Duplex, Buffer], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"connection\", listen: Function<[stream.Duplex], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"dropRequest\", requestListener : Function<[http.IncomingMessage, stream.Duplex], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"request\", requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"upgrade\", requestListener : Function<[http.IncomingMessage, stream.Duplex, Buffer], void>) : void"
+        }
+      ]
+    },
+    {
+      "name": "IncomingMessage",
+      "parent": "stream.Readable",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"aborted\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"close\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "error",
+          "signature": "(event: \"Error\"): http.IncomingMessage"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setTimeout",
+          "signature": "(msecs : number, callback : Function) : http.IncomingMessage"
+        }
+      ]
+    },
+    {
+      "name": "ServerResponse",
+      "parent": "http.OutgoingMessage",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"close\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"finish\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "writeHead",
+          "signature": "(statusCode: number, statusMessage: string, headers: Object|Array): ServerResponse"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "writeContinue",
+          "signature": "(): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "writeEarlyHints",
+          "signature": "(hints: Object, callback: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "writeProcessing",
+          "signature": "(): void"
+        }
+      ]
+    },
+    {
+      "name": "OutgoingMessage",
+      "parent": "events.EventEmitter",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"drain\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"finish\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "addListener",
+          "signature": "(event: \"prefinish\", listener: Function<[], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "appendHeader",
+          "signature": "(name: string, value: string | string[]): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "cork",
+          "signature": "() : unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "destroy",
+          "signature": "(error: Error): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "end",
+          "signature": "(chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "flushHeaders",
+          "signature": "() : unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getHeader",
+          "signature": "(name: string) : string"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getHeaderNames",
+          "signature": "() : string[]"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getHeaders",
+          "signature": "() : Object"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "hasHeader",
+          "signature": "(name: string): boolean"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "pipe",
+          "signature": "(): never"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "removeHeader",
+          "signature": "(name: string): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setHeader",
+          "signature": "(name: string, value: string): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setHeaders",
+          "signature": "(headers: Headers|Map): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setTimeout",
+          "signature": "(msec: number, callback: Function<[], void>): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "socket",
+          "signature": ": stream.Duplex"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "uncork",
+          "signature": "() : unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "write",
+          "signature": "(chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): boolean"
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createServer",
+      "signature": "(options:Object, requestListener : Function<[http.IncomingMessage, http.ServerResponse], void>) : http.Server"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "get",
+      "signature": "(url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void>) : http.ClientRequest"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "request",
+      "signature": "(url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void) : http.ClientRequest"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "validateHeaderName",
+      "signature": "(name: string, label: string): void"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "validateHeaderValue",
+      "signature": "(name: string, value: any): void"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "setMaxIdleHTTPParsers",
+      "signature": "(max: number): void"
+    },
+    {
+      "kind": "field",
+      "level": 0,
+      "name": "METHODS",
+      "signature": ": Array[string]"
+    },
+    {
+      "kind": "field",
+      "level": 0,
+      "name": "STATUS_CODES",
+      "signature": ": Array[string]"
+    }
+  ]
+}

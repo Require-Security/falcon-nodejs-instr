@@ -1,0 +1,10 @@
+module https
+  class Agent extends http.agent
+    http-2 addListener (event: "keylog", listener: Function<[Buffer, tls.TLSSocket], void>) : void
+  end-class Agent
+  class Server extends http.Server
+  end-class Server
+  http-2 createServer (options : Object, requestListener : Function) : https.Server
+  http-2 get (url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void>) : http.ClientRequest
+  http-2 request (url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void) : http.ClientRequest
+end-module https

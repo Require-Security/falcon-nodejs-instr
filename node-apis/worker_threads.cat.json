@@ -1,0 +1,13 @@
+{
+  "name": "worker_threads",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "exec",
+      "level": 4,
+      "name": "Worker",
+      "signature": ": (filename: string)"
+    }
+  ]
+}

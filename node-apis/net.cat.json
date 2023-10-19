@@ -1,0 +1,254 @@
+{
+  "name": "net",
+  "modules": [],
+  "classes": [
+    {
+      "name": "Server",
+      "parent": "EventEmitter",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "constructor",
+          "signature": "(options: Object, callback: Function<[net.Socket], void>)"
+        },
+        {
+          "kind": "http",
+          "level": 1,
+          "name": "address",
+          "signature": "() : Object|string|null"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "close",
+          "signature": "(callback : Function) : net.Server"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "getConnections",
+          "signature": "(callback : Function<[Error, number], void>): void"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "listen",
+          "signature": "(args: unknown[], callback: Function<[], void>) : this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "ref",
+          "signature": "(): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "unref",
+          "signature": "(): this"
+        }
+      ]
+    },
+    {
+      "name": "Socket",
+      "parent": "stream.Duplex",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "constructor",
+          "signature": "(options: Object)"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "address",
+          "signature": "(): Object"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "connect",
+          "signature": "(options: Object, connectListener: Function): this"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "connect",
+          "signature": "(path: string, connectListener: Function): this"
+        },
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "connect",
+          "signature": "(port: number, host: string, connectListener: Function): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "destroy",
+          "signature": "(error: Error): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "destorySoon",
+          "signature": "(): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "end",
+          "signature": "(chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "pause",
+          "signature": "(): unknown"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "ref",
+          "signature": "(): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "unref",
+          "signature": "(): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "resetAndDestroy",
+          "signature": "(): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "resume",
+          "signature": "(): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setEncoding",
+          "signature": "(encoding: string): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setKeepAlive",
+          "signature": "(enable: boolean, initialDelay: number): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setNoDelay",
+          "signature": "(enable: boolean): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "setTimeout",
+          "signature": "(enable: boolean, callback: Function): this"
+        },
+        {
+          "kind": "http",
+          "level": 0,
+          "name": "write",
+          "signature": "(chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): boolean"
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "connect",
+      "signature": "(options: Object, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "connect",
+      "signature": "(path: string, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "connect",
+      "signature": "(port: number, host: string, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createConnection",
+      "signature": "(options: Object, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createConnection",
+      "signature": "(path: string, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createConnection",
+      "signature": "(port: number, host: string, connectListener: Function): net.Socket"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createServer",
+      "signature": "(options: Object, connectionListener: Function<[net.Socket], void>): net.Server"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "getDefaultAutoSelectFamily",
+      "signature": "(): boolean"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "setDefaultAutoSelectFamily",
+      "signature": "(value: boolean): void"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "getDefaultAutoSelectFamilyAttemptTimeout",
+      "signature": "() : number"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "setDefaultAutoSelectFamilyAttemptTimeout",
+      "signature": "(value: number): void"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "isIP",
+      "signature": "(input: string): number"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "isIPv4",
+      "signature": "(input: string): boolean"
+    },
+    {
+      "kind": "http",
+      "level": 0,
+      "name": "isIPv6",
+      "signature": "(input: string): boolean"
+    }
+  ]
+}

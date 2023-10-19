@@ -1,0 +1,3 @@
+module tty
+  pure-0 isatty () : boolean
+end-module tty

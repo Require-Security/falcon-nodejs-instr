@@ -1,0 +1,13 @@
+{
+  "name": "os",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "file",
+      "level": 1,
+      "name": "hostname",
+      "signature": "() : string"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+module worker_threads
+  exec-4 Worker: (filename: string)
+end-module buffer

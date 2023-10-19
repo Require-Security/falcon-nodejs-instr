@@ -1,0 +1,106 @@
+{
+  "name": "child_process",
+  "modules": [
+    {
+      "name": "asynchronous_process_creation",
+      "modules": [],
+      "classes": [],
+      "methods": [
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "exec",
+          "signature": "(command : string, options : Object, callback : Function) : child_process.ChildProcess"
+        },
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "execFile",
+          "signature": "(file : string, args : string[], options : Object, callback : Function) : child_process.ChildProcess"
+        },
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "fork",
+          "signature": "(modulePath : string|URL, args : string[], options : Object) : child_process.ChildProcess"
+        },
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "spawn",
+          "signature": "(command : string, args : string[], options : Object) : child_process.ChildProcess"
+        }
+      ]
+    },
+    {
+      "name": "synchronous_process_creation",
+      "modules": [],
+      "classes": [],
+      "methods": [
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "execFileSync",
+          "signature": "(file : string, args : string[], options : Object) : Buffer|string"
+        },
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "execSync",
+          "signature": "(command : string, options : Object) : Buffer|string"
+        },
+        {
+          "kind": "exec",
+          "level": 3,
+          "name": "spawnSync",
+          "signature": "(command : string, args : string[], options : Object) : Object"
+        }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "name": "ChildProcess",
+      "parent": "events.EventEmitter",
+      "methods": [
+        {
+          "kind": "exec",
+          "level": 0,
+          "name": "disconnect",
+          "signature": "() : [unknown]"
+        },
+        {
+          "kind": "exec",
+          "level": 2,
+          "name": "kill",
+          "signature": "(signal : number|string) : boolean"
+        },
+        {
+          "kind": "exec",
+          "level": 1,
+          "name": "ref",
+          "signature": "() : [unknown]"
+        },
+        {
+          "kind": "exec",
+          "level": 1,
+          "name": "send",
+          "signature": "(message : Object, sendHandle : Handle, options : Object, callback : Function) : boolean"
+        },
+        {
+          "kind": "exec",
+          "level": 1,
+          "name": "unref",
+          "signature": "() : [unknown]"
+        },
+        {
+          "kind": "exec",
+          "level": 1,
+          "name": "addListener",
+          "signature": "(event: \"message\", callback: Function)"
+        }
+      ]
+    }
+  ],
+  "methods": []
+}

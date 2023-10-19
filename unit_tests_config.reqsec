@@ -1,0 +1,84 @@
+# Mode to run the agent in: either 'learn' or 'enforce'
+mode: learn
+
+# File to write the privilege results to
+#
+# This is the basic action of learning mode: learning runs for a while
+# and either generates a privs file (from this option), or streams events
+# to the frontend UI
+privsFile: $TARGET_DIR/privs_$TIMESTAMP.json
+
+# File to write a stream of events to
+#
+# This will write a log of every sensitive call we encounter to a file
+# Event files can get large with various options (`logDuplicateEvents: true`),
+# so you should monitor the size of the file
+eventFile: $TARGET_DIR/events_$TIMESTAMP.json
+
+# Run the agent with a shadow stack for events/setTimeouts/indirect calls
+#
+# Without this, all stack traces will end at an indirect call, since node
+# does not trace stacktraces past them.
+#
+# This is very expensive to run with (~2x overhead)
+shadowStack: false
+
+# Log sensitive functions that we haven't categorized
+#
+# Eventually, we will have categorized all node API calls and this will be
+# removed, but until then, it's a useful option to have
+#
+# As we see unknown calls, we should categorize them, so this
+# defaults to true
+traceUnknownBuiltins: true
+
+# If a call is at this level or higher, log its permissions
+#
+# Node API calls have a sensitivity level ranging from 0 to 4. 0 means
+# harmless, while 4 is extremely dangerous. By default, we log or enforce
+# everything that is level 1 or higher, ignoring level 0 calls
+#
+# If better performance is necessary, upping this to 2 should lower overhead
+# with minimal security implications
+#
+# In learn mode, we will log a message when a call of above this level happens.
+# In enforcement mode, we will log a message if an invalid call of above
+# this level happens.
+#
+eventThreshold: 1
+
+# If a call is at this level or higher, block invalid uses of it
+#
+# This has no effect in learning mode. In enforcement mode, if a call
+# is below this threshold and above (or at) eventThreshold, we will
+# log a warning but not throw an error.
+#
+# If a call is above this threshold we will throw an error on an invalid use
+#
+blockSensitivity: 1
+
+# Override the default proxy specs dir
+#
+# ProxySpecsDir is the directory we read api categorization information from.
+# By default, it's ./node-apis.
+#### proxySpecsDir: <path to your proxySpecsDir>
+
+
+# Emit log messages for events we've already seen
+#
+# By default, we only log messages for events the first time we see them.
+# This is *dramatically* faster than the alternative. However, for certain
+# testing cases, we might want to get the full log. Enable this if you
+# want the full log
+logDuplicateEvents: false
+
+# Granularity of traces
+#
+# Options are "library" or "file. Library will give the package.json name,
+# while file will give individual files
+traceGranularity: library
+
+# Connect to web dashboard
+#
+# Set a value to connect to the dashboard at this port
+#### dashboardPort: 4000

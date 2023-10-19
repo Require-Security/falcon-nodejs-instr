@@ -1,0 +1,3 @@
+module querystring
+  pure-0 parse (s: string) : string
+end-module querystring

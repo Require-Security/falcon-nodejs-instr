@@ -1,0 +1,202 @@
+module fs
+  module promises_api
+    class promises.FileHandle
+      file-0 appendFile (data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<buffer>
+      file-2 chmod (mode : number) : Promise<void>
+      file-2 chown (uid : number, gid : number) : Promise<void>
+      file-0 close () : Promise<void>
+      file-0 createReadStream (options : Object) : fs.ReadStream
+      file-0 createWriteStream (options : Object) : fs.WriteStream
+      file-0 datasync () : Promise<void>
+      file-0 read (buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : Promise<FileReadResult>
+      file-0 read (options : Object) : Promise<FileReadResult>
+      file-0 read (buffer : Buffer|TypedArray|DataView, options : Object) : Promise<FileReadResult>
+      file-0 readableWebStream () : ReadableStream
+      file-0 readFile (options : Object|string) : Promise<Buffer>
+      file-0 readLines (options : Object) : readline.InterfaceConstructor
+      file-0 readv (buffers : Buffer[]|TypedArray[]|DataView[], position : number|null) : Promise<ReadVResult>
+      file-0 stat (options : Object) : Promise<fs.Stats>
+      file-0 sync () : Promise<void>
+      file-0 truncate (len : number) : Promise<void>
+      file-0 utimes (atime : number|string|Date, mtime : number|string|Date) : Promise<void>
+      file-0 write (buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : Promise<Object>
+      file-0 write (buffer : Buffer|TypedArray|DataView, options : Object) : Promise<Object>
+      file-0 write (string : string, position : number|null, encoding : string) : Promise<aObject
+      file-0 writeFile (data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<void>
+      file-0 writev (buffers : Buffer[]|TypedArray[]|DataView[], position : number|null) : Promise<WriteVResult>
+    end-class promises.FileHandle
+    file-1 promises.access (path : string|Buffer|URL, mode : number) : Promise<void>
+    file-2 promises.appendFile (path : string|Buffer|URL|fs.promises.FileHandle, data : string|Buffer, options : Object|string) : Promise<void>
+    file-2 promises.chmod (path : string|Buffer|URL, mode : string|number) : Promise<void>
+    file-2 promises.chown (path : string|Buffer|URL, uid : number, gid : number) : Promise<void>
+    file-2 promises.copyFile (src : string|Buffer|URL, dest : string|Buffer|URL, mode : number) : Promise<void>
+    file-2 promises.cp (src : string|URL, dest : string|URL, options : Object) : Promise<void>
+    file-2 promises.lchmod (path : string|Buffer|URL, mode : number) : Promise<void>
+    file-2 promises.lchown (path : string|Buffer|URL, uid : number, gid : number) : Promise<void>
+    file-2 promises.lutimes (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : Promise<void>
+    file-2 promises.link (existingPath : string|Buffer|URL, newPath : string|Buffer|URL) : Promise<void>
+    file-1 promises.lstat (path : string|Buffer|URL, options : Object) : Promise<Stats|BigIntStats>
+    file-2 promises.mkdir (path : string|Buffer|URL, options : Object|number) : Promise<string|undefined>
+    file-1 promises.mkdtemp (prefix : string, options : string|Object) : Promise<string|Buffer>
+    file-2 promises.open (path : string|Buffer|URL, flags : string|number, mode : string|number) : Promise<fs.promises.FileHandle>
+    file-2 promises.opendir (path : string|Buffer|URL, options : Object) : Promise<fs.Dir>
+    file-2 promises.readdir (path : string|Buffer|URL, options : string|Object) : Promise<string[]|Buffer[]|fs.Dirent[]>
+    file-2 promises.readFile (path : string|Buffer|URL|fs.promises.FileHandle, options : Object|string) : Promise<string|Buffer>
+    file-2 promises.readlink (path : string|Buffer|URL, options : string|Object) : Promise<string|Buffer>
+    file-1 promises.realpath (path : string|Buffer|URL, options : string|Object) : Promise<string|Buffer>
+    file-2 promises.rename (oldPath : string|Buffer|URL, newPath : string|Buffer|URL) : Promise<void>
+    file-2 promises.rmdir (path : string|Buffer|URL, options : Object) : Promise<void>
+    file-2 promises.rm (path : string|Buffer|URL, options : Object) : Promise<void>
+    file-1 promises.stat (path : string|Buffer|URL, options : Object) : Promise<Stats|BigIntStats>
+    file-2 promises.symlink (target : string|Buffer|URL, path : string|Buffer|URL, type : string|null) : Promise<void>
+    file-2 promises.truncate (path : string|Buffer|URL, len : number) : Promise<void>
+    file-2 promises.unlink (path : string|Buffer|URL) : Promise<void>
+    file-1 promises.utimes (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : Promise<void>
+    file-1 promises.watch (filename : string|Buffer|URL, options : string|Object) : AsyncIterator
+    file-2 promises.writeFile (file : string|Buffer|URL|fs.promises.FileHandle, data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<void>
+  end-module promises_api
+  module callback_api
+    file-1 access (path : string|Buffer|URL, mode : number, callback : Function) : void
+    file-2 appendFile (path : string|Buffer|URL|number, data : string|Buffer, options : Object|string, callback : Function) : void
+    file-2 chmod (path : string|Buffer|URL, mode : string|number, callback : Function) : void
+    file-2 chown (path : string|Buffer|URL, uid : number, gid : number, callback : Function) : void
+    file-1 close (fd : number, callback : Function) : void
+    file-2 copyFile (src : string|Buffer|URL, dest : string|Buffer|URL, mode : number, callback : Function) : void
+    file-2 cp (src : string|URL, dest : string|URL, options : Object, callback : Function) : void
+    file-2 createReadStream (path : string|Buffer|URL, options : string|Object) : fs.ReadStream
+    file-2 createWriteStream (path : string|Buffer|URL, options : string|Object) : fs.WriteStream
+    file-1 exists (path : string|Buffer|URL, callback : Function) : void
+    file-2 fchmod (fd : number, mode : string|number, callback : Function) : void
+    file-2 fchown (fd : number, uid : number, gid : number, callback : Function) : void
+    file-0 fdatasync (fd : number, callback : Function) : void
+    file-1 fstat (fd : number, options : Object, callback : Function<[Error, fs.Stats], void>) : void
+    file-0 fsync (fd : number, callback : Function) : void
+    file-2 ftruncate (fd : number, len : number, callback : Function) : void
+    file-0 futimes (fd : number, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void
+    file-2 lchmod (path : string|Buffer|URL, mode : number, callback : Function) : void
+    file-2 lchown (path : string|Buffer|URL, uid : number, gid : number, callback : Function) : void
+    file-1 lutimes (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void
+    file-2 link (existingPath : string|Buffer|URL, newPath : string|Buffer|URL, callback : Function) : void
+    file-1 lstat (path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Stats], void>) : void
+    file-2 mkdir (path : string|Buffer|URL, options : Object|number, callback : Function) : void
+    file-1 mkdtemp (prefix : string, options : string|Object, callback : Function) : void
+    file-2 open (path : string|Buffer|URL, flags : string|number, mode : string|number, callback : Function) : void
+    file-2 opendir (path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Dir], void>) : void
+    file-0 read (fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|bigint|null, callback : Function) : void
+    file-0 read (fd : number, options : Object, callback : Function) : void
+    file-0 read (fd : number, buffer : Buffer|TypedArray|DataView, options : Object, callback : Function) : void
+    file-2 readdir (path : string|Buffer|URL, options : string|Object, callback : Function<[Error, string[]|Buffer[]|fs.Dirent[]], void>) : void
+    file-2 readFile (path : string|Buffer|URL|number, options : Object|string, callback : Function) : void
+    file-2 readlink (path : string|Buffer|URL, options : string|Object, callback : Function) : void
+    file-0 readv (fd : number, buffers : ArrayBufferView[], position : number|null, callback : Function) : void
+    file-1 realpath (path : string|Buffer|URL, options : string|Object, callback : Function) : void
+    file-1 native (path : string|Buffer|URL, options : string|Object, callback : Function) : void
+    file-2 rename (oldPath : string|Buffer|URL, newPath : string|Buffer|URL, callback : Function) : void
+    file-2 rmdir (path : string|Buffer|URL, options : Object, callback : Function) : void
+    file-2 rm (path : string|Buffer|URL, options : Object, callback : Function) : void
+    file-1 stat (path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Stats], void>) : void
+    file-1 statfs (path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.StatFs], void>) : void
+    file-2 symlink (target : string|Buffer|URL, path : string|Buffer|URL, type : string|null, callback : Function) : void
+    file-2 truncate (path : string|Buffer|URL, len : number, callback : Function) : void
+    file-2 unlink (path : string|Buffer|URL, callback : Function) : void
+    file-0 unwatchFile (filename : string|Buffer|URL, listener : Function) : void
+    file-1 utimes (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void
+    file-1 watch (filename : string|Buffer|URL, options : string|Object, listener : Function|undefined) : fs.FSWatcher
+    file-1 watchFile (filename : string|Buffer|URL, options : Object, listener : Function<[fs.Stats, fs.Stats], void>) : fs.StatWatcher
+    file-0 write (fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null, callback : Function) : void
+    file-0 write (fd : number, buffer : Buffer|TypedArray|DataView, options : Object, callback : Function) : void
+    file-0 write (fd : number, string : string, position : number|null, encoding : string, callback : Function) : void
+    file-2 writeFile (file : string|Buffer|URL|number, data : string|Buffer|TypedArray|DataView, options : Object|string, callback : Function) : void
+    file-2 writev (fd : number, buffers : ArrayBufferView[], position : number|null, callback : Function) : void
+  end-module callback_api
+  module synchronous_api
+    file-1 accessSync (path : string|Buffer|URL, mode : number) : [unknown]
+    file-2 appendFileSync (path : string|Buffer|URL|number, data : string|Buffer, options : Object|string) : [unknown]
+    file-2 chmodSync (path : string|Buffer|URL, mode : string|number) : [unknown]
+    file-2 chownSync (path : string|Buffer|URL, uid : number, gid : number) : [unknown]
+    file-0 closeSync (fd : number) : [unknown]
+    file-2 copyFileSync (src : string|Buffer|URL, dest : string|Buffer|URL, mode : number) : [unknown]
+    file-2 cpSync (src : string|URL, dest : string|URL, options : Object) : [unknown]
+    file-1 existsSync (path : string|Buffer|URL) : boolean
+    file-2 fchmodSync (fd : number, mode : string|number) : [unknown]
+    file-2 fchownSync (fd : number, uid : number, gid : number) : [unknown]
+    file-0 fdatasyncSync (fd : number) : [unknown]
+    file-0 fstatSync (fd : number, options : Object) : fs.Stats
+    file-0 fsyncSync (fd : number) : [unknown]
+    file-2 ftruncateSync (fd : number, len : number) : [unknown]
+    file-0 futimesSync (fd : number, atime : number|string|Date, mtime : number|string|Date) : [unknown]
+    file-2 lchmodSync (path : string|Buffer|URL, mode : number) : [unknown]
+    file-2 lchownSync (path : string|Buffer|URL, uid : number, gid : number) : [unknown]
+    file-1 lutimesSync (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : [unknown]
+    file-2 linkSync (existingPath : string|Buffer|URL, newPath : string|Buffer|URL) : [unknown]
+    file-1 lstatSync (path : string|Buffer|URL, options : Object) : fs.Stats
+    file-2 mkdirSync (path : string|Buffer|URL, options : Object|number) : string|undefined
+    file-1 mkdtempSync (prefix : string, options : string|Object) : string
+    file-2 opendirSync (path : string|Buffer|URL, options : Object) : fs.Dir
+    file-2 openSync (path : string|Buffer|URL, flags : string|number, mode : string|number) : number
+    file-2 readdirSync (path : string|Buffer|URL, options : string|Object) : string[]|Buffer[]|fs.Dirent[]
+    file-2 readFileSync (path : string|Buffer|URL|number, options : Object|string) : string|Buffer
+    file-2 readlinkSync (path : string|Buffer|URL, options : string|Object) : string|Buffer
+    file-0 readSync (fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|bigint|null) : number
+    file-0 readSync (fd : number, buffer : Buffer|TypedArray|DataView, options : Object) : number
+    file-0 readvSync (fd : number, buffers : ArrayBufferView[], position : number|null) : number
+    file-1 realpathSync (path : string|Buffer|URL, options : string|Object) : string|Buffer
+    file-1 native (path : string|Buffer|URL, options : string|Object) : string|Buffer
+    file-2 renameSync (oldPath : string|Buffer|URL, newPath : string|Buffer|URL) : [unknown]
+    file-2 rmdirSync (path : string|Buffer|URL, options : Object) : [unknown]
+    file-2 rmSync (path : string|Buffer|URL, options : Object) : [unknown]
+    file-1 statSync (path : string|Buffer|URL, options : Object) : fs.Stats
+    file-2 symlinkSync (target : string|Buffer|URL, path : string|Buffer|URL, type : string|null) : [unknown]
+    file-2 truncateSync (path : string|Buffer|URL, len : number) : [unknown]
+    file-2 unlinkSync (path : string|Buffer|URL) : [unknown]
+    file-1 utimesSync (path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : [unknown]
+    file-2 writeFileSync (file : string|Buffer|URL|number, data : string|Buffer|TypedArray|DataView, options : Object|string) : [unknown]
+    file-0 writeSync (fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : number
+    file-0 writeSync (fd : number, buffer : Buffer|TypedArray|DataView, options : Object) : number
+    file-0 writeSync (fd : number, string : string, position : number|null, encoding : string) : number
+    file-0 writevSync (fd : number, buffers : ArrayBufferView[], position : number|null) : number
+   end-module synchronous_api
+  module common_objects
+    class Dir
+      file-0 close () : Promise<void>
+      file-0 close (callback : Function) : [unknown]
+      file-0 closeSync () : [unknown]
+      file-0 read () : Promise<fs.Dirent>
+      file-0 read (callback : Function<[Error, fs.Dirent], void) : [unknown]
+      file-0 readSync () : fs.Dirent|null
+      file-0 [Symbol.asyncIterator] () : AsyncIterator
+    end-class Dir
+    class Dirent
+      file-0 isBlockDevice () : boolean
+      file-0 isCharacterDevice () : boolean
+      file-0 isDirectory () : boolean
+      file-0 isFIFO () : boolean
+      file-0 isFile () : boolean
+      file-0 isSocket () : boolean
+      file-0 isSymbolicLink () : boolean
+    end-class Dirent
+    class FSWatcher
+      file-0 close () : [unknown]
+      file-0 ref () : fs.FSWatcher
+      file-0 unref () : fs.FSWatcher
+    end-class FSWatcher
+    class StatWatcher
+      file-0 ref () : fs.StatWatcher
+      file-0 unref () : fs.StatWatcher
+    end-class fs.StatWatcher
+    class ReadStream
+    end-class ReadStream
+    class Stats
+      file-0 isBlockDevice () : boolean
+      file-0 isCharacterDevice () : boolean
+      file-0 isDirectory () : boolean
+      file-0 isFIFO () : boolean
+      file-0 isFile () : boolean
+      file-0 isSocket () : boolean
+      file-0 isSymbolicLink () : boolean
+    end-class Stats
+    class WriteStream
+      file-0 close (callback : Function) : [unknown]
+    end-class WriteStream
+  end-module common_objects
+end-module fs

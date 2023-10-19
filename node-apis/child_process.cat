@@ -1,0 +1,21 @@
+module child_process
+  module asynchronous_process_creation
+    exec-3 exec (command : string, options : Object, callback : Function) : child_process.ChildProcess
+    exec-3 execFile (file : string, args : string[], options : Object, callback : Function) : child_process.ChildProcess
+    exec-3 fork (modulePath : string|URL, args : string[], options : Object) : child_process.ChildProcess
+    exec-3 spawn (command : string, args : string[], options : Object) : child_process.ChildProcess
+  end-module asynchronous_process_creation
+  module synchronous_process_creation
+    exec-3 execFileSync (file : string, args : string[], options : Object) : Buffer|string
+    exec-3 execSync (command : string, options : Object) : Buffer|string
+    exec-3 spawnSync (command : string, args : string[], options : Object) : Object
+  end-module synchronous_process_creation
+  class ChildProcess extends events.EventEmitter
+    exec-0 disconnect () : [unknown]
+    exec-2 kill (signal : number|string) : boolean
+    exec-1 ref () : [unknown]
+    exec-1 send (message : Object, sendHandle : Handle, options : Object, callback : Function) : boolean
+    exec-1 unref () : [unknown]
+    exec-1 addListener (event: "message", callback: Function)
+  end-class ChildProcess
+end-module child_process

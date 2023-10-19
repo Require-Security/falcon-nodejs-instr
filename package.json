@@ -1,0 +1,50 @@
+{
+  "name": "@reqsec/falcon-nodejs-instr",
+  "version": "0.7.3",
+  "description": "Falcon NodeJS instrumentation",
+  "author": "Aarno Labs / Require Security",
+  "bugs": {
+    "url": "https://github.com/Require-Security/falcon-nodejs-instr/issues",
+    "email": "mgordon@requiresecurity.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Require-Security/falcon-nodejs-instr.git"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "test": "npx ava",
+    "test-ci": "npx ava -s",
+    "test-libs": "npx ava -s tests/library_tests && npx ava -s tests/test_suite_tests.js",
+    "test-all": "npx ava -s && npx ava -s tests/library_tests && npx ava -s tests/test_suite_tests.js"
+  },
+  "ava": {
+    "files": [
+      "tests/timer_tests.js",
+      "tests/misc_tests.js",
+      "tests/api_tests.js",
+      "tests/default_dict_tests.js",
+      "tests/event_tests.js",
+      "tests/parse_stack_trace_tests.js",
+      "tests/dynamic_tests.js",
+      "tests/config_tests.js",
+      "tests/worker_tests.js",
+      "tests/parse_method_signature_tests.js",
+      "tests/callback_args_tests.js"
+    ],
+    "timeout": "5m"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2",
+    "typescript": "^4.9.5",
+    "yargs": "^17.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "@types/yargs": "^17.0.23",
+    "ava": "^5.1.0"
+  }
+}

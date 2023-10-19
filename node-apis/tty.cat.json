@@ -1,0 +1,13 @@
+{
+  "name": "tty",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "isatty",
+      "signature": "() : boolean"
+    }
+  ]
+}

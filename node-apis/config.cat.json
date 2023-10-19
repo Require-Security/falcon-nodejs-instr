@@ -1,0 +1,13 @@
+{
+  "name": "config",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "file",
+      "level": 2,
+      "name": "get",
+      "signature": "() : string"
+    }
+  ]
+}

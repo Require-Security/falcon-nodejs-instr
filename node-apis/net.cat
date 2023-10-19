@@ -1,0 +1,45 @@
+module net
+  class Server extends EventEmitter
+    http-2 constructor(options: Object, callback: Function<[net.Socket], void>)
+    http-1 address() : Object|string|null
+    http-0 close (callback : Function) : net.Server
+    http-0 getConnections(callback : Function<[Error, number], void>): void
+    http-2 listen (args: unknown[], callback: Function<[], void>) : this
+    http-0 ref(): this
+    http-0 unref(): this
+  end-class Server
+  class Socket extends stream.Duplex
+    http-0 constructor(options: Object)
+    http-0 address(): Object
+    http-2 connect(options: Object, connectListener: Function): this
+    http-2 connect(path: string, connectListener: Function): this
+    http-2 connect(port: number, host: string, connectListener: Function): this
+    http-0 destroy(error: Error): unknown
+    http-0 destorySoon(): unknown
+    http-0 end (chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): unknown
+    http-0 pause(): unknown
+    http-0 ref(): this
+    http-0 unref(): this
+    http-0 resetAndDestroy(): this
+    http-0 resume(): this
+    http-0 setEncoding(encoding: string): this
+    http-0 setKeepAlive(enable: boolean, initialDelay: number): this
+    http-0 setNoDelay(enable: boolean): this
+    http-0 setTimeout(enable: boolean, callback: Function): this
+    http-0 write (chunk: string|Buffer|Uint8Array, encoding: string, callback: Function<[], void>): boolean
+  end-class Socket
+  http-2 connect(options: Object, connectListener: Function): net.Socket
+  http-2 connect(path: string, connectListener: Function): net.Socket
+  http-2 connect(port: number, host: string, connectListener: Function): net.Socket
+  http-2 createConnection(options: Object, connectListener: Function): net.Socket
+  http-2 createConnection(path: string, connectListener: Function): net.Socket
+  http-2 createConnection(port: number, host: string, connectListener: Function): net.Socket
+  http-2 createServer(options: Object, connectionListener:  Function<[net.Socket], void>): net.Server
+  http-0 getDefaultAutoSelectFamily(): boolean
+  http-2 setDefaultAutoSelectFamily(value: boolean): void
+  http-0 getDefaultAutoSelectFamilyAttemptTimeout() : number
+  http-2 setDefaultAutoSelectFamilyAttemptTimeout(value: number): void
+  http-0 isIP(input: string): number
+  http-0 isIPv4(input: string): boolean
+  http-0 isIPv6(input: string): boolean
+end-module net

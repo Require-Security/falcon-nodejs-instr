@@ -1,0 +1,19 @@
+{
+  "name": "buffer",
+  "modules": [],
+  "classes": [
+    {
+      "name": "Buffer",
+      "parent": null,
+      "methods": [
+        {
+          "kind": "pure",
+          "level": 0,
+          "name": "Buffer.isBuffer",
+          "signature": "(obj: object): boolean"
+        }
+      ]
+    }
+  ],
+  "methods": []
+}

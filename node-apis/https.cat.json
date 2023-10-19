@@ -1,0 +1,43 @@
+{
+  "name": "https",
+  "modules": [],
+  "classes": [
+    {
+      "name": "Agent",
+      "parent": "http.agent",
+      "methods": [
+        {
+          "kind": "http",
+          "level": 2,
+          "name": "addListener",
+          "signature": "(event: \"keylog\", listener: Function<[Buffer, tls.TLSSocket], void>) : void"
+        }
+      ]
+    },
+    {
+      "name": "Server",
+      "parent": "http.Server",
+      "methods": []
+    }
+  ],
+  "methods": [
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "createServer",
+      "signature": "(options : Object, requestListener : Function) : https.Server"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "get",
+      "signature": "(url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void>) : http.ClientRequest"
+    },
+    {
+      "kind": "http",
+      "level": 2,
+      "name": "request",
+      "signature": "(url : string|URL, options : Object|string|URL, callback : Function<[http.IncomingMessage], void) : http.ClientRequest"
+    }
+  ]
+}

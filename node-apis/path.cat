@@ -1,0 +1,10 @@
+module path
+  pure-0 join (...paths: string[]) : string
+  pure-0 normalize (path: string) : string
+  pure-0 basename (path: string) : string
+  pure-0 dirname (path: string): string
+  pure-0 relative (to: string, from: string): string
+  pure-0 extname (path: string) : string
+  pure-0 isAbsolute (path: string) : boolean
+  file-1 resolve (...paths: string[]): string
+end-module path

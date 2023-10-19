@@ -1,0 +1,3 @@
+mode: learn
+privsFile: $TARGET_DIR/privs.json
+shadowStack: false

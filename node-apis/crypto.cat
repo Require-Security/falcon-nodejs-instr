@@ -1,0 +1,5 @@
+module crypto
+  pure-0 createHash (algorithm: string) : Hash
+  pure-0 randomUUID () : string
+  pure-0 randomFill (buffer: Buffer) : Buffer
+end-module crypto

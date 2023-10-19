@@ -1,0 +1,13 @@
+{
+  "name": "querystring",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "parse",
+      "signature": "(s: string) : string"
+    }
+  ]
+}

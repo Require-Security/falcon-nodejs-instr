@@ -1,0 +1,55 @@
+{
+  "name": "path",
+  "modules": [],
+  "classes": [],
+  "methods": [
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "join",
+      "signature": "(...paths: string[]) : string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "normalize",
+      "signature": "(path: string) : string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "basename",
+      "signature": "(path: string) : string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "dirname",
+      "signature": "(path: string): string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "relative",
+      "signature": "(to: string, from: string): string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "extname",
+      "signature": "(path: string) : string"
+    },
+    {
+      "kind": "pure",
+      "level": 0,
+      "name": "isAbsolute",
+      "signature": "(path: string) : boolean"
+    },
+    {
+      "kind": "file",
+      "level": 1,
+      "name": "resolve",
+      "signature": "(...paths: string[]): string"
+    }
+  ]
+}
