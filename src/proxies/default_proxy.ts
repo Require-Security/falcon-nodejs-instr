@@ -46,7 +46,7 @@ function doGetNotMethod(proxySpec: Namespace | Unknown,
     }
 
     if(spec.kind == "Unknown" || spec.level >= State().eventThreshold) {
-      // XXX: should be reciever, maybe?
+      // XXX: should be receiver, maybe?
       if(spec.kind == "Method" || spec.kind == "OverloadedMethod") {
         registerFunctionSpec(out, target, spec)
       }

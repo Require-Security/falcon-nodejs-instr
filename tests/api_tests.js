@@ -58,7 +58,7 @@ test('api: enforce has privilege', async function(t) {
   }
 
   var results_file = await write_results_file(
-    {"fs.openSync": [["nodejs-agent"]]}
+    {"fs.openSync": [["@reqsec/falcon-nodejs-instr"]]}
   )
   const opts = {
     mode: "NO_ARGS",
@@ -87,7 +87,7 @@ test('api: enforce privilege violation', async function(t) {
     t.fail()
   } catch (err) {
     const stack = err.stack.split('\n')
-    t.is(stack[5], "Error: Permissions Violation: fs.openSync called from nodejs-agent")
+    t.is(stack[5], "Error: Permissions Violation: fs.openSync called from @reqsec/falcon-nodejs-instr")
   }
 })
 

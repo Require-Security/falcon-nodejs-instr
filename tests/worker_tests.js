@@ -47,6 +47,39 @@ test('worker threads no crash', async function(t) {
   await t.notThrowsAsync(run_code(code, opts))
 })
 
+test('worker threads no crash require with dashboard', async function(t) {
+  function code() {
+    require("../../../dist/index.js")({dashboardPort: 6543})
+    const { Worker, isMainThread } = require('node:worker_threads');
+    const cp = require('child_process');
+
+    if (isMainThread) {
+      console.log('In main thread', process.pid)
+      // This re-loads the current file inside a Worker instance.
+      const num_of_workers = 10;
+      for (let i = 0; i < num_of_workers; i++)
+        new Worker(__filename);
+
+      // If we're running the dashboard, we won't auto-close
+      setTimeout(() => process.exit(0), 1000)
+    } else {
+      console.log('Inside Worker!', process.pid);
+
+      const ms = Math.floor(Math.random()*200) + 200
+      setTimeout(() => {
+        cp.exec('echo "This is a command"', (error, stdout, stderr) => {
+          console.log(`stdout: ${stdout}`);
+        });
+      }, ms);
+    }
+  }
+
+  const opts = {
+    mode: "RAW",
+  }
+  await t.notThrowsAsync(run_code(code, opts))
+})
+
 test('worker data passed to worker thread', async function (t) {
   const results_file = await gen_temp_file("results.json")
   const opts = {

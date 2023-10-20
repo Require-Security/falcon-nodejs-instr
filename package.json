@@ -1,16 +1,17 @@
 {
   "name": "@reqsec/falcon-nodejs-instr",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Falcon NodeJS instrumentation",
   "author": "Aarno Labs / Require Security",
   "bugs": {
     "url": "https://github.com/Require-Security/falcon-nodejs-instr/issues",
-    "email": "mgordon@requiresecurity.com"
+    "email": "contact@requiresecurity.com"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Require-Security/falcon-nodejs-instr.git"
   },
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
     "test": "npx ava",

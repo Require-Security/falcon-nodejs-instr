@@ -1,8 +1,13 @@
+import { isMainThread } from "worker_threads";
 import { logModuleLoad } from "./proxies/loader_proxy";
-import { AgentConfig, initializeConfig, loadFromConfigFile } from "./utils/config";
+import { AgentConfig, loadFromConfigFile } from "./utils/config";
 import { initializeAgent } from "./utils/initialize_agent";
 
 exports = module.exports = function(config: Partial<AgentConfig> = {}) {
+  if(!isMainThread) {
+    return
+  }
+
   const targetCmd = process.argv.slice(1)
 
   const manualConfig = config

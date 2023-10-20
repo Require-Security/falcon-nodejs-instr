@@ -20,7 +20,7 @@ test('config: set config file', async function (t) {
   const resultFile = path.join(targetDir, "privs.json")
   const json = JSON.parse(await readFile(resultFile))
   t.deepEqual(json['fs.readFileSync'][0],
-              ["nodejs-agent"])
+              ["@reqsec/falcon-nodejs-instr"])
 })
 
 test('config: invalid config value', async function (t) {
@@ -150,7 +150,7 @@ test('config: use default config file', async function (t) {
   const resultFile = path.join(targetDir, resultFiles[0])
   const json = JSON.parse(await readFile(resultFile))
   t.deepEqual(json['fs.readFileSync'][0],
-              ["nodejs-agent"])
+              ["@reqsec/falcon-nodejs-instr"])
 })
 
 test('config: blockSensitivity-enforcement', async function (t) {
@@ -180,7 +180,7 @@ test('config: blockSensitivity-enforcement', async function (t) {
   const resultFile = path.join(path.dirname(code_file), "privs.json")
   const json = JSON.parse(await readFile(resultFile))
   t.deepEqual(json['fs.openSync'][0],
-              ["nodejs-agent"])
+              ["@reqsec/falcon-nodejs-instr"])
 
   /* Now enforce. This one should pass */
   config = `
@@ -260,7 +260,7 @@ test('config: use require no args', async function (t) {
 
   const resultFile = path.join(targetDir, resultFiles[0])
   const json = JSON.parse(await readFile(resultFile))
-  t.deepEqual(json['fs.openSync'], [['nodejs-agent']])
+  t.deepEqual(json['fs.openSync'], [['@reqsec/falcon-nodejs-instr']])
 })
 
 

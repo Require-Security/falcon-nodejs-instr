@@ -43,16 +43,16 @@ The top left status box should now show app status as `connected` and mode as `l
 
 You should be looking at the Libraries tab. There should be one library: `webserver-demo`.
 
-If you go to the Privileges pane, there are two tables: Privileges By Library and Privileges By Call. Privileges By Library should have one library (`webserver-demo`) with http and file privileges. Privileges By Call should have three permissions, for `http.createServer`, `net.Server.listen`, and `fs.truncateSync`. These are all API calls that happen when the server is set up, so they will aready be there
+If you go to the Privileges pane, there are two tables: Privileges By Library and Privileges By Call. Privileges By Library should have one library (`webserver-demo`) with http and file privileges. Privileges By Call should have three permissions, for `http.createServer`, `net.Server.listen`, and `fs.truncateSync`. These are all API calls that happen when the server is set up, so they will already be there
 
-- Now (in a seperate tab), go to `localhost:8124`. This is the demo webserver.
+- Now (in a separate tab), go to `localhost:8124`. This is the demo webserver.
 - Submit some benign data.
 
 The html will be read via `fs.createReadStream`, and benign data will be written to a file via `fs.appendFile`. If you go back to the dashboard, you will see two new entries in Privileges By Call
 
 - Back in the dashboard, go to the Control pane.
 
-The `Export` button will export a trace of all instrumentation events the dashboard has recieved. If you'd like a record of the permissions so far, hit "Export"
+The `Export` button will export a trace of all instrumentation events the dashboard has received. If you'd like a record of the permissions so far, hit "Export"
 
 - Turn `Enable Alerting` on.
 
@@ -93,4 +93,4 @@ This time, when the exploit tries to run exec, Falcon will block the permissions
 
 -------------------
 
-¹This will simply serve you the statc webpage -- no instrumnetantion information will be sent off your machine
+¹This will simply serve you the static webpage -- no instrumentation information will be sent off your machine

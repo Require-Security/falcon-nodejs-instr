@@ -8,7 +8,7 @@ Key features of Falcon:
 - Application Insight: unique instrumentation provides detailed information on libraries used in the application, whether they are directly or indirectly loaded at runtime, and the associated privileges of individual application libraries.
 - Context Sensitivity: Unlike the experimental nodejs permissions model, Falcon allows privileges on a per-library or per-file basis. This allows the application to perform sensitive tasks with one module while protecting against vulnerabilities in others
 
-**PLEASE NOTE**: This is an early version of Falcon. If you try it and run into issues, please email at mgordon@requiresecurity.com or open a github issue.
+**PLEASE NOTE**: This is an early version of Falcon. If you try it and run into issues, please email at contact@requiresecurity.com or open a github issue.
 
 Known Issues:
 - Only fs, http, https, net, and child_process APIs are fully covered
@@ -58,11 +58,11 @@ The top left status box should now show app status as `connected` and mode as `l
 
 Even without any input to your application, you should see libraries show up on the dashboard. Any library which your application loads will show up in the Libraries tab when it's loaded, and in the Privileges tab, you will be able to see the privileges used by said library as those privileges are exercised.
 
-As your application recieves inputs and does new things, new privileges (and new libraries, depending on your architecture) will show up on the dashboard.
+As your application receives inputs and does new things, new privileges (and new libraries, depending on your architecture) will show up on the dashboard.
 
 Once you are satisfied with the displayed libraries and privileges, you can move to the Controls tab.
 
-The `Export` button will export a trace of all instrumentation events the dashboard has recieved. It can be reloaded from the dashboard splash screen.
+The `Export` button will export a trace of all instrumentation events the dashboard has received. It can be reloaded from the dashboard splash screen.
 
 ## Alerting
 `Enable Alerting` will move Falcon from learning to alerting mode. This will
@@ -76,7 +76,7 @@ From alerting mode, you can move back and forth between alerting and block
 modes. In block mode, whenever an attempted privilege violation is detected, the
 instrumentation will actually throw an error (thus preventing the violation) as well as logging a message.
 
-If you see spurious events (or don't see fs, child_process, or network events that you expected to see), please file a bug on github or email mgordon@requiresecurity.com
+If you see spurious events (or don't see fs, child_process, or network events that you expected to see), please file a bug on github or email contact@requiresecurity.com
 
 # Contact
 Falcon was pioneered at Aarno Labs in partnership with leading government research organizations, and has since transitioned to release under Require Security.
@@ -87,9 +87,9 @@ Aarno Labs is a leading cyber security R&D company that specializes in solving e
 
 Visit us at [https://www.requiresecurity.com/](https://www.requiresecurity.com/) and [https://aarno-labs.com/](https://aarno-labs.com/)
 
-For bug reports, please open github issues or email mgordon@requiresecurity.com
+For bug reports, please open github issues or email contact@requiresecurity.com
 
 -----------------
 
 
-¹This will simply serve you the statc webpage -- no instrumnetantion information will be sent off your machine
+¹This will simply serve you the static webpage -- no instrumentation information will be sent off your machine

@@ -201,8 +201,8 @@ function removeAllListenersProxy<T extends Function>(func: T): T {
 // Also used for object constructed by eventEmitter itself
 function eventEmitterObjectProxy<T extends object>(obj: T): T {
   const handler = {
-    get(target: object, property: PropertyKey, reciever?: unknown) {
-      const out = Reflect.get(target, property, reciever)
+    get(target: object, property: PropertyKey, receiver?: unknown) {
+      const out = Reflect.get(target, property, receiver)
       switch (out) {
         case EventEmitter.prototype.on:
         case EventEmitter.prototype.once:
@@ -234,8 +234,8 @@ function eventEmitterObjectProxy<T extends object>(obj: T): T {
 
 export function eventEmitterProxy(): typeof EventEmitter {
   const handler = {
-    get(target: typeof EventEmitter, property: PropertyKey, reciever?: unknown) {
-      const out = Reflect.get(target, property, reciever)
+    get(target: typeof EventEmitter, property: PropertyKey, receiver?: unknown) {
+      const out = Reflect.get(target, property, receiver)
       switch(out) {
         case EventEmitter.prototype:
           return eventEmitterObjectProxy(out)

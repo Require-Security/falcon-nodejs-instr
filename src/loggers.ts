@@ -3,6 +3,7 @@ import { State } from './global_state';
 import { Server } from "socket.io";
 import { DashboardMode } from './types/types';
 import { getPrivilegeMode, setPrivilegeMode } from './privilege_mode';
+import { createServer } from "http";
 
 
 /** Logging levels enum as type */
@@ -42,7 +43,7 @@ export function logEvent(value: LoggingObject) {
 
 /**
  * Log an agent type message with an associated log level for the
- * given json object.  The level will be added as a properity to the
+ * given json object.  The level will be added as a property to the
  * top level of the object.
  *
  * @param level Log level
@@ -140,14 +141,15 @@ export class SocketIOAppender implements Appender {
   connected: boolean
   UIMode: DashboardMode
   constructor(port: number) {
-    const io = new Server(port, { cors: {
+    const httpServer = createServer()
+    const io = new Server(httpServer, { cors: {
       origin: verifyOrigin,
       methods: ['GET', 'POST'],
       credentials: true,
   } });
 
     if (getPrivilegeMode() != "training") {
-      throw Error("If using Web UI, lanuch in training mode")
+      throw Error("If using Web UI, launch in training mode")
     }
     this.UIMode = "learn"
 
@@ -166,6 +168,15 @@ export class SocketIOAppender implements Appender {
         }
       })
     });
+
+    httpServer.on("error", (e) => {
+      console.warn("Failed to open socket on port %s", port)
+      console.warn("This means either you need to select a different port,")
+      console.warn("or, (likely), falcon is instrumenting a worker thread")
+      console.warn("somehow. Please report this to contact@requiresecurity.com")
+    });
+
+    httpServer.listen(port)
   }
 
   modeChange(newMode: DashboardMode) {

@@ -34,7 +34,7 @@ loaded value with our default proxy. This means we proxy all the builtins as
 they are loaded. And, if we were to write a spec for a specific non-builtin
 library, we would proxy that too.
 
-Note that events are handled seperately: a call to `require('events')` will
+Note that events are handled separately: a call to `require('events')` will
 get `eventEmitterProxy` instead of the default proxy
 
 ## **`proxy.ts`**
@@ -60,7 +60,7 @@ We do not proxy functions that are considered safe, so anything proxied will be
 noted.
 
 <!-- If we have a proxy for `fs`, and we are trying to get `fs.promises`, the get
-handler will first check to see if `fs.promses` is a method or a namespace (or
+handler will first check to see if `fs.promises` is a method or a namespace (or
 unknown). Since it is a namespace, we will return a proxy of `fs.promises` with
 a reference to `fs.promises`'s **spec** (see `global_state.ts`, again):
 
@@ -107,7 +107,7 @@ Contains command line arguments, mostly:
 
 `ENFORCE_FROM` is either null (in training mode) or the enforcement spec
 
-### Enforcment ###
+### Enforcement ###
 When running in enforcement mode, we take a file of the form `{<name>:
 [lib_trace_1, lib_trace_2]}` (where `<name>` is a string ("fs") and
 `lib_trace_1` would be `["http_server.js", "../node_modules/esprima"]` or
