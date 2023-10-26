@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava')
 const { Graph } = require('../dist/utils/graph.js')
 const {

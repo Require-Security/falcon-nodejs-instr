@@ -1,6 +1,6 @@
 {
   "name": "@reqsec/falcon-nodejs-instr",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "description": "Falcon NodeJS instrumentation",
   "author": "Aarno Labs / Require Security",
   "bugs": {
@@ -17,7 +17,7 @@
     "test": "npx ava",
     "test-ci": "npx ava -s",
     "test-libs": "npx ava -s tests/library_tests && npx ava -s tests/test_suite_tests.js",
-    "test-all": "npx ava -s && npx ava -s tests/library_tests && npx ava -s tests/test_suite_tests.js"
+    "test-all": "npx ava -s && npx ava -s tests/library_tests.js && npx ava -s tests/test_suite_tests.js"
   },
   "ava": {
     "files": [
@@ -31,7 +31,8 @@
       "tests/config_tests.js",
       "tests/worker_tests.js",
       "tests/parse_method_signature_tests.js",
-      "tests/callback_args_tests.js"
+      "tests/callback_args_tests.js",
+      "tests/import_tests.mjs"
     ],
     "timeout": "5m"
   },
@@ -40,12 +41,12 @@
   },
   "dependencies": {
     "socket.io": "^4.7.2",
-    "typescript": "^4.9.5",
     "yargs": "^17.7.1"
   },
   "devDependencies": {
-    "@types/node": "^18.11.10",
+    "@types/node": "^20.8.9",
     "@types/yargs": "^17.0.23",
-    "ava": "^5.1.0"
+    "ava": "^5.1.0",
+    "typescript": "^5.2.2"
   }
 }

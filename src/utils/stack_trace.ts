@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { getCallStack } from "../shadow_stacks";
 import { StackTraceEntry, StaticEntry, StackTrace, Name } from "../types/types"
 import { instrumentationDirectory, nodeModulesDirectory, srcDirectory } from "./constants";
@@ -117,6 +118,9 @@ export function simplifyStackTrace(st: StackTrace[]) {
   const out: string[] = []
   for (const entry of st.flat()) {
     var path = entry.filename
+    if(path.startsWith("file://")) {
+      path = path.replace("file://", "")
+    }
     if(!validFilePath(path)) {
       continue
     }

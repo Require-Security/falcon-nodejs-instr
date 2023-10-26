@@ -1,3 +1,5 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
+
 import { Name, SpecJson } from "../types/types"
 import fs = require("fs")
 import path = require("path")
@@ -14,7 +16,7 @@ const overloadsToFinish: Set<OverloadedMethod> = new Set()
 const classesToFinish: Map<Namespace, string> = new Map()
 
 // This map stores all the classes that we parse out of the json
-// categorisation files so we can check later if we're interested
+// categorization files so we can check later if we're interested
 // in them, and grab their corresponding spec.
 //
 // If we're running with trace-unknown-builtins, then we
@@ -46,8 +48,12 @@ export type Spec = Namespace | Unknown | Method | OverloadedMethod | Field
 
 const TopLevelName = "TOP_LEVEL"
 
-export function TopLevel() {
+function TopLevel() {
   return new Namespace(TopLevelName, new Map())
+}
+
+export function getProxiedBuiltins() {
+  return [...TOP_LEVEL_SPEC.specs.keys()]
 }
 
 export class Namespace {
@@ -457,11 +463,11 @@ function getProxyMethodReturn(method: Method) {
   return proxyReturn
 }
 
-/** Take a callback arg and figure out which of its paramters should be proxied
+/** Take a callback arg and figure out which of its parameters should be proxied
  *
  * @param callbackType The type of the callback
- * @returns List of wrappers-or-null for each paramter (where wrappers
- * are for senstitive paramters and nulls for not)
+ * @returns List of wrappers-or-null for each parameter (where wrappers
+ * are for sensitive parameters and nulls for not)
  */
 function processMethodArgThatIsCallback(callbackType: FunctionArgType) {
   let sensitiveParams: Map<number, Spec> = new Map()
@@ -475,7 +481,7 @@ function processMethodArgThatIsCallback(callbackType: FunctionArgType) {
     if (paramTypes.length > 1) {
       if(paramTypes.some(paramType => paramType.kind == "RawType"
                          && classesOfInterest.has(paramType.name))) {
-          throw Error("NotImplemeted: Typed callbacks with classes of interest with multiple options")
+          throw Error("NotImplemented: Typed callbacks with classes of interest with multiple options")
         }
         continue
     }
@@ -630,7 +636,7 @@ function finishOverload(method: OverloadedMethod) {
     }
 
     // Automatically make a default for untracked events.
-    // XXX: add a comamnd line argument to track these
+    // XXX: add a command line argument to track these
     const baseName = method.name.split(".").at(-1)
     if (defaultSpec === null &&
         baseName &&

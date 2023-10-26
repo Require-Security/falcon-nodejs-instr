@@ -1,3 +1,7 @@
-import fs from "fs";
+const {init} = await import("../../../dist/index.js")
+const __filename = import.meta.url.replace("file://", "")
+init({privsFile: __filename + ".privs.json"})
 
-fs.openSync("/dev/null")
+const fs = await import("fs")
+
+await fs.promises.open(__filename)

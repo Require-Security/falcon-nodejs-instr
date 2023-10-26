@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 /** Proxy for Module._load
  *
  * When setupLoaderProxy is called, it overwrites Module._load with a proxy. The
@@ -33,6 +34,7 @@ import { getProxySpec } from "../proxy_specs/proxy_specs"
 import { instrumentationDirectory, nodeModulesDirectory } from "../utils/constants"
 import { logEvent, logString } from "../loggers"
 import { isBuiltin } from "../utils/misc"
+import { createRequire } from "module"
 
 // Have to use raw require because typescript wraps its imports
 // so you can't 'accidentally' overwrite builtin parameters
@@ -41,11 +43,11 @@ const M = require("node:module")
 // Request is the requested module
 // Parent is the filename of the module this was called from.
 // isMain checks to see if the parent was the entry point, I think?
-type LoaderFuncion = (request: string, parent: string, isMain: boolean) => object
+type LoaderFunction = (request: string, parent: string, isMain: boolean) => object
 
 export function setupLoaderProxy() {
   const handler = {
-    apply(target: LoaderFuncion, self: object, args: [string, NodeModule, boolean]) {
+    apply(target: LoaderFunction, self: object, args: [string, NodeModule, boolean]) {
       const [request, parent, isMain] = args
       // If we're called from our code, don't proxy
       if(parent &&
@@ -55,7 +57,7 @@ export function setupLoaderProxy() {
        return Reflect.apply(target, self, args)
       }
 
-      logModuleLoad(request, parent, isMain)
+      logModuleLoad(request, parent?.filename, isMain)
 
       const loaded = Reflect.apply(target, self, args)
 
@@ -190,24 +192,21 @@ function getPackageJsonFromPath(filepath: string): PackageInfo | null {
   return null
 }
 
-function getRelativeParent(parentModule: NodeModule | null) : string | null{
+function getRelativeParent(parent: string) : string | null{
   // when there isn't a parent, it seems like the id is just '.'
-  if (parentModule?.filename && parentModule.filename !== ".") {
-    return "./" + path.relative(State().appPwd, parentModule.filename)
+  if (parent && parent !== "." && parent !== "TOP_LEVEL") {
+    return "./" + path.relative(State().appPwd, parent)
   }
 
   return null
 }
 
 const loggedModuleLoads: Set<string> = new Set()
-export function logModuleLoad(requestedModule: string, parent: NodeModule | null, isMain: boolean) {
-  const parentID = parent ? parent.id : "TOP LEVEL"
-  const parentPath = parent? parent.filename : "TOP LEVEL"
-
+export function logModuleLoad(requestedModule: string, parent: string, isMain: boolean) {
   // I thought requires were always cached, so we wouldn't see the same moduleLoad
   // for the same require. This is not the case, but we don't want to be logging the
   // same module load repeatedly. So, we track what we've seen before
-  const key = `${requestedModule}||${parentID}`
+  const key = `${requestedModule}||${parent}`
   if(loggedModuleLoads.has(key)) {
     return
   }
@@ -222,7 +221,7 @@ export function logModuleLoad(requestedModule: string, parent: NodeModule | null
         outcome: "moduleLoad",
         filename: requestedModule,
         isBuiltin: true,
-        parent: parentPath,
+        parent: parent,
         parent_relative: getRelativeParent(parent),
         id: requestedModule,
       }
@@ -233,8 +232,13 @@ export function logModuleLoad(requestedModule: string, parent: NodeModule | null
   }
 
   // If we get here, we're dealing with a non-builtin
-  const resolvedPath = M._resolveFilename(requestedModule, parent, isMain)
-
+  let resolvedPath
+  try {
+    resolvedPath = M._resolveFilename(requestedModule, parent, isMain)
+  } catch (e) {
+    const parentRequire = createRequire(parent)
+    resolvedPath = parentRequire.resolve(requestedModule)
+  }
   // try to get an object representing the closest package.json to the id
   let packageJson: any | null = null
   if (resolvedPath) {
@@ -258,7 +262,7 @@ export function logModuleLoad(requestedModule: string, parent: NodeModule | null
       filename: resolvedPath,
       filename_relative: "./" + path.relative(State().appPwd, resolvedPath),
       isBuiltin: false,
-      parent: parentPath,
+      parent: parent,
       parent_relative: getRelativeParent(parent),
       name: packageJson?.name,
       version: packageJson?.version,

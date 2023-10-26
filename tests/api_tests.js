@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava')
 const fs = require('fs')
 const { gen_temp_file, run_code } = require('../dist/test_util.js')

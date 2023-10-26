@@ -1,12 +1,9 @@
 #! /usr/bin/env node
 'use strict';
-const https = require ('https');
 const fs = require ('fs');
-const readline = require ('readline');
 const util = require ('util');
 const child_process = require ('child_process');
-const path = require ('path');
-const { assert } = require('console');
+const { parseCatFile } = require("../dist/utils/cat_to_js")
 
 let debug = false;
 
@@ -38,99 +35,11 @@ function exec_pt (obj, format, ...args) {
   child_process.execSync (cmd, obj)
 }
 
-class LibInfo {
-
-  constructor (name) {
-    this.name = name;
-    this.modules = [];
-    this.classes = []
-    this.methods = []
-  }
-}
-
-class ModInfo {
-
-  constructor (name) {
-    this.name = name;
-    this.modules = [];
-    this.classes = []
-    this.methods = []
-  }
-}
-
-class ClassInfo {
-  constructor (name, parent) {
-    this.name = name;
-    this.parent = parent
-    this.methods = []
-  }
-}
-
-class MethodInfo {
-
-  constructor (kind, level, name, signature) {
-    this.kind = kind;
-    this.level = Number(level);
-    this.name = name;
-    this.signature = signature;
-  }
-}
-
 /** Async main so we can use await **/
 async function mymain(files) {
-
   try {
     for (const file of files) {
-      const input = fs.readFileSync (file, "utf8").split ("\n");
-      let libinfo = null;
-      let modinfo = null;
-      let classinfo = null;
-      for (let line of input) {
-        line = line.trim();
-        if (!line) {
-          continue;
-        }
-        const toks = line.split (/\s+/);
-        // log ("toks = %s", toks);
-        if (line.startsWith("module")) {
-          if (!libinfo) {
-            libinfo = new LibInfo (toks[1]);
-          } else { // embedded module
-            modinfo = new ModInfo (toks[1]);
-            libinfo.modules.push (modinfo);
-          }
-        } else if (line.startsWith ("class")) {
-          let parent = null
-          if (toks[2] == "extends") {
-            parent = toks[3]
-          } else if (toks[2] !== undefined) {
-            throw Error("After class should only be 'extends'")
-          }
-          classinfo = new ClassInfo (toks[1], parent);
-          if (modinfo)
-            modinfo.classes.push (classinfo);
-          else
-            libinfo.classes.push (classinfo);
-        } else if (line.startsWith ("end-class")) {
-          classinfo = null;
-        } else if (line.startsWith ("end-module")) {
-          modinfo = null;
-        } else { // must be a method definition
-          let [kind, level] = toks[0].split ("-");
-          let rest = toks.slice(1)
-          let matchName = /([\[\]a-zA-Z0-9_\.]+)\s*(.*)/
-          let m = rest.join(" ").match(matchName)
-          assert(m, `Failed to match ${rest}`)
-          const mi = new MethodInfo (kind, level, m[1], m[2]);
-          if (classinfo) {
-            classinfo.methods.push (mi);
-          } else if (modinfo) {
-            modinfo.methods.push (mi);
-          } else {
-            libinfo.methods.push (mi);
-          }
-        }
-      }
+      const libinfo = await parseCatFile(file)
 
       // write out the json file
       const jsonstr = JSON.stringify (libinfo, null, 2);

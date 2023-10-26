@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 /** Real-time timing utils
  *
  * There are lots of ways to get timing data (clinic flame), but they

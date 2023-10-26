@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 export type SerializedRecord = Record<string, string[][]>
 export type EnforcementRecord = ReadonlyMap<PropertyKey, Set<symbol>>
 export type Name = string

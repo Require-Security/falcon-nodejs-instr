@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava')
 const path = require('path')
 const child_process = require("child_process")
@@ -234,7 +235,7 @@ test('config: blockSensitivity-enforcement', async function (t) {
 
 test('config: use require no args', async function (t) {
   function code() {
-    require("../../../dist/index.js")()
+    require("../../../dist/index.js").init()
     const fs = require("fs")
     const fd = fs.openSync("/dev/null")
     fs.closeSync(fd)
@@ -268,7 +269,7 @@ test('config: use require override parameter', async function (t) {
   function code() {
     const cfg = {privsFile: __dirname + "/privs.json",
                  eventFile: null}
-    require("../../../dist/index.js")(cfg)
+    require("../../../dist/index.js").init(cfg)
     const fs = require("fs")
     const fd = fs.openSync("/dev/null")
     fs.closeSync(fd)
@@ -296,7 +297,7 @@ test('config: just require parameter', async function (t) {
     const cfg = {mode: "learn",
                  privsFile: __dirname + "/privs.json",
                  traceGranularity: "file"}
-    require("../../../dist/index.js")(cfg)
+    require("../../../dist/index.js").init(cfg)
     const fs = require("fs")
     const fd = fs.openSync("/dev/null")
     fs.closeSync(fd)

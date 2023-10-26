@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import crypto = require('crypto')
 import fs = require("fs")
 import path = require('path')

@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import path, { dirname, join } from "path";
 import { Options } from "./args";
@@ -188,4 +189,3 @@ function generateWorkerConfigFile(config: Partial<AgentConfig>) {
     .map(elt => `${elt[0]}:${elt[1]}`)
     .join("\n")
 }
-

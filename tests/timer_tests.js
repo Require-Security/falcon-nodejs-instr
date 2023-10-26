@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava')
 const { run_code, run_multi_inline_test } = require('../dist/test_util.js')
 const { Graph } = require('../dist/utils/graph.js')

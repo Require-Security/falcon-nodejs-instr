@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { hideBin } from "yargs/helpers";
 import yargs, { Argv } from "yargs";
 import { AgentConfig, loadFromConfigFile } from "./config";

@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import assert from "assert"
 import { SpecJson } from "../types/types"
 

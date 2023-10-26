@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// Copyright 2023, Require Security Inc, All Rights Reserved
+
 /** Unit tests for cat-da!
  *
  * There are two types of supported tests: inline and file. See run_inline_test and
@@ -46,7 +48,7 @@ interface NoArgsSpec extends CommonOptions {
   extra_agent_args?: string[]
 }
 
-type RunSpec = RawSpec | BatchSpec | NoArgsSpec 
+type RunSpec = RawSpec | BatchSpec | NoArgsSpec
 
 export async function run_test(target: string, spec: RunSpec, cwd: string | null = null) {
   const options: ExecOptions = {

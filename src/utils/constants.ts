@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import path = require("path")
 
 export const HEADER_DONE = "/* HEADER_DONE */"

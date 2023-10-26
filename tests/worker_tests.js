@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava')
 const { gen_temp_file,
         run_file_test,
@@ -49,7 +50,7 @@ test('worker threads no crash', async function(t) {
 
 test('worker threads no crash require with dashboard', async function(t) {
   function code() {
-    require("../../../dist/index.js")({dashboardPort: 6543})
+    require("../../../dist/index.js").init({dashboardPort: 6543})
     const { Worker, isMainThread } = require('node:worker_threads');
     const cp = require('child_process');
 

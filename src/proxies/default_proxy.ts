@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import {
   getFunctionSpec,
   getOriginalObject, isProxy, lookupProxy, registerFunctionSpec, State

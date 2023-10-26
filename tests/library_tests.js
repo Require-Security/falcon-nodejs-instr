@@ -1,5 +1,6 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava');
-const { run_code } = require('../dist/test_util.js')
+const { run_code, run_file_test } = require('../dist/test_util.js')
 
 // test('lodash', async function(t) {
 //   // XXX: this is a bad test until I add import support, since lodash uses imports

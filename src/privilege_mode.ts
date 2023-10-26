@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 /**
  * This file encapsulates calculations that are performed when a privilege access
  * occurs to decide if learning or learned (training or enforcement).  It doesn't do

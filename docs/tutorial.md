@@ -57,7 +57,7 @@ The `Export` button will export a trace of all instrumentation events the dashbo
 - Turn `Enable Alerting` on.
 
 ## Alerting
-Enable Alerting` will move Falcon from learning to alerting mode. This will lock
+`Enable Alerting` will move Falcon from learning to alerting mode. This will lock
 in the learned privileges as our privilege policy. Once in alerting mode, you
 cannot move back to learning mode (without restarting the app), and unlike
 learning mode, alerting mode will not add new privileges. Instead, if alerting

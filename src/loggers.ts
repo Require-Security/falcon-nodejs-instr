@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import fs = require('fs');
 import { State } from './global_state';
 import { Server } from "socket.io";
@@ -192,4 +193,3 @@ export class SocketIOAppender implements Appender {
     this.queue.push(message)
   }
 }
-

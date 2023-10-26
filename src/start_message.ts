@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { logEvent } from "./loggers";
 import os = require('os');
 import { loggingEvents, UUID } from "./global_state";

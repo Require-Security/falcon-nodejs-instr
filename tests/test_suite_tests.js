@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 const test = require('ava');
 const path = require('path');
 const { gen_temp_file,

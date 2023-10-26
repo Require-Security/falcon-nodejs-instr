@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 // Not little e2e tests, but testing proxy spec handling directly
 const ps = require('../dist/proxy_specs/parse_method_signature')
 

@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { symbolizeTrace,
          UUID,
          State,
@@ -238,7 +239,7 @@ function libraryTraceToPrivilege(libTrace: LibraryTraceElement[]): string[] {
 /**
  * Check if the call is allowed based on the presence of the privtrace in the
  * privileges.  Depending on the command mode, the privileges come from either
- * the enforcemenet file (in state) or the calculated privileges in the Analysis
+ * the enforcement file (in state) or the calculated privileges in the Analysis
  * Results (auto mode)
  *
  * @param spec The call information

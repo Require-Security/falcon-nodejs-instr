@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 declare namespace NodeJS {
   interface Process {
     binding(name: string) : object;

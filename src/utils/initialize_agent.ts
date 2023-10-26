@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import path from "path"
 import { State, makeGlobalState } from "../global_state"
 import { initAccessOutcomes } from "../privilege_mode"

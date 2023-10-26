@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { appendFileSync, writeFileSync } from "fs"
 import { dirname } from "path"
 

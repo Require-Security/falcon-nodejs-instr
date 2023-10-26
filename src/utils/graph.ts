@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 export class Node<T> {
   data: T;
   adjacent: Node<T>[];

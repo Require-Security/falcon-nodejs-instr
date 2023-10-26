@@ -1,3 +1,4 @@
+// Copyright 2023, Require Security Inc, All Rights Reserved
 import { getCallStack } from "../shadow_stacks"
 import { lookupProxy } from "../global_state"
 import { DefaultDict, WeakDefaultDict } from "../utils/misc"
