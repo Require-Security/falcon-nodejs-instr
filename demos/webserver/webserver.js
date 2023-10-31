@@ -1,4 +1,4 @@
-require("../../dist/index.js").init({dashboardPort: 4567})
+require("../../dist/init.js").init({dashboardPort: 4567})
 const http = require('http');
 const fs = require('fs');
 const path = require('path')

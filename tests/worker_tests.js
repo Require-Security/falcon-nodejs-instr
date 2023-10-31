@@ -50,7 +50,7 @@ test('worker threads no crash', async function(t) {
 
 test('worker threads no crash require with dashboard', async function(t) {
   function code() {
-    require("../../../dist/index.js").init({dashboardPort: 6543})
+    require("../../../dist/init.js").init({dashboardPort: 6543})
     const { Worker, isMainThread } = require('node:worker_threads');
     const cp = require('child_process');
 

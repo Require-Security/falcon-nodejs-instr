@@ -115,7 +115,7 @@ function getProxy(name) {
   if (spec) {
     return getDefaultProxy({obj: ${libName}[name], proxySpec: spec})
   } else {
-    return fs[name]
+    return "${libName}[name]
   }
 }
 
@@ -132,6 +132,7 @@ function getProxy(name) {
 
 
 const ProxiedAPIs = ["fs", "http", "https", "child_process"]
+// XXX: handle fs.promises
 async function main(apisFolder: string) {
   for (const name of ProxiedAPIs) {
     const code = await generateCode(name)

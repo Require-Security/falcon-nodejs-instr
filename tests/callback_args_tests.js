@@ -137,11 +137,14 @@ test('Callback Args: Distinguish by number: 1', async function(t) {
   t.deepEqual(result['fs.Dirent.isDirectory'], ["./test_code.js"])
 })
 
-test('Callback Args: clientRequest on', async function(t) {
+// This actually tries to connect to Google and will fail if they
+// reject it
+test.skip('Callback Args: clientRequest on', async function(t) {
   function code() {
     const http = require('node:http');
     const net = require('node:net');
     const { URL } = require('node:url');
+    const port = 34365
 
     // Create an HTTP tunneling proxy
     const proxy = http.createServer((req, res) => {
@@ -162,7 +165,6 @@ test('Callback Args: clientRequest on', async function(t) {
     });
 
     // Now that proxy is running
-    const port = 34333
     proxy.listen(port, '127.0.0.1', () => {
 
       // Make a request to a tunneling proxy
@@ -228,7 +230,7 @@ test.skip('Callback Args: trace events through classes that extend eventEmitter'
     });
 
     // Now that proxy is running
-    const port = 34333
+    const port = 34336
     proxy.listen(port, '127.0.0.1', () => {
 
       // Make a request to a tunneling proxy

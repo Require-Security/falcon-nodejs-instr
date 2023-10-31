@@ -104,6 +104,10 @@ export function proxiable(obj: unknown) : obj is object {
 
 const NATIVE_MODULES = new Set(Object.keys(process.binding('natives')))
 export function isBuiltin(module: string) {
+  if(module.startsWith("node:")) {
+    return true
+  }
+
   return NATIVE_MODULES.has(module)
 }
 

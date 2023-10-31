@@ -26,47 +26,18 @@ If you would like to run on our provided demo program instead of your own app, f
 <ol type="1.">
   <li>Go to the root of the node project you would like to instrument</li>
   <li><code>npm install @reqsec/falcon-nodejs-instr</code></li>
-  <li>Find your app's entry file (e.g. `index.js` -- see FAQ for help of this)
-  <li>Invoke Falcon instrumentation as the first thing your app does:
+  <li><code>export NODE_OPTIONS="--require @reqsec/falcon-nodejs-instr"</code>
   <ul>
-     <li>If your entry file is a commonjs module (i.e. uses <code>require</code>), before anything else is loaded, add:</li>
-    <ul>
-
-  ```javascript
-  require("@reqsec/falcon-nodejs-instr").init({dashboardPort: 4000})
-  ```
-  <div>
-    </ul>
-    <li>If your entry file is an es6 module (i.e. uses <code>import</code> and is not typescript), because of the way es6 modules are loaded (bottom-up), you cannot have any static imports in your entry file. Thus, either:</li>
-    <ul>
-      <li>Change all static <code>import ...</code> statements into dynamic <code>await import(...)</code>s</li>
-      <li>Add a trampoline file:</li>
-      <ul>
-        <li> If your entry point is a symlink, find its destination (e.g. <code>readlink &lt;filename&gt;</code>)
-        <li> In its destination folder, create a new file with the same file extension and a different name (e.g. <code>app.mjs</code> => <code>app_entry.mjs</code>)
-        <li> Copy the contents of your original entry point file into the new file you just created
-        <li> Replace the contents of your original entry point file with </li>
-    <ul>
-
-  ```javascript
-  const {init} = await import("@reqsec/falcon-nodejs-instr")
-  init({dashboardPort: 4000})
-  await import("./<new entry point file>")
-  export {}
-  ```
-  <div>
-    </ul>
-      </ul>
-    </ul>
-    <li>If your entry point is a typescript file, look at your tsconfig to figure out which format you are targeting</li>
-    </ol>
-  </li>
+    <li>If you would like to change the dashboard port (or any other settings) for the agent,
+        edit <code>node_modules/@reqsec/falcon-nodejs-instr/dist/index.js</code></li>
+</li>
+  </ul>
   <li>(Re)start your application.</li>
   <li> Setup Dashboard</li>
     <ol type="a">
     <li>Remote Host</li>
     <ul>
-      <li>Load the dashboard by going to <a href="https://falcon.requiresecurity.com">https://falcon.requiresecurity.com</a> ¹</li>
+      <li>Load the dashboard by going to <a href="https://falcon.requiresecurity.com">https://falcon.requiresecurity.com</a></li>
     </ul>
     <li>Self Host</li>
     <ul>
@@ -78,7 +49,6 @@ If you would like to run on our provided demo program instead of your own app, f
     </ol>
   <li> Configure host and click 'connect' in the dashboard landing page </li>
 </ol>
-<br/>
 
 ## Learning
 The top left status box should now show app status as `connected` and mode as `learning`.
@@ -109,27 +79,14 @@ If you see spurious events (or don't see fs, child_process, or network events th
 ### Which apps/frameworks are currently supported/should work?
 | Name  | Status | Notes|
 | ------------- | ------------- | ----- |
-| Remix | Yes | Entry is `node_modules/.bin/remix` |
-| eslint | Yes | Entry is `node_modules/.bin/eslint` |
-| ghost CMS | Yes | Entry is `./install/current/index.js` |
-| totalJS CMS| Yes | Entry is `./index.js` |
-| express | Yes | Entry is `./app.js` |
-| Docusaurus | Yes | Entry is `node_modules/.bin/docusaurus`, which is a symlink to `node_modules/@docusaurus/core/bin/docusaurus.mjs`. We used a trampoline to make this work. It's es6, so needs node 20.8+|
+| Remix | Yes | |
+| eslint | Yes | |
+| ghost CMS | Yes | |
+| totalJS CMS| Yes |  |
+| express | Yes |  |
+| Docusaurus | Yes | It's es6, so needs node 20.8+|
 | Electron  | Partial  | Has been done internally but not published |
 | NextJS | No | Should work if we can figure out how to instrument server|
-
-### How do I find the entry point to my app?
-
-If your app doesn't have a simple `index.js` at the top-level folder (e.g. if you use one of the frameworks above) finding the place to add our `require` line may be tricky.
-Here's an approach we have found to be reliable:
-   1. Run your app as usual.
-   2. In a separate terminal run `pgrep -a node`. If you don't have `pgrep` you can use `ps xuaw | grep node` instead.
-   3. If all goes well you'll see a line listing node with an argument for the file that it's running, for example: `node /some/path/my-app/node_modules/.bin/remix dev`.
-   4. `/some/path/my-app/node_modules/.bin/remix` is the file you'll want to edit.
-   6. Kill your app.
-   7. Edit the file and add our `require` line to the top.
-   8. Restart the app and you should be good to go.
-
 
 # Contact
 Falcon was pioneered at Aarno Labs in partnership with leading government research organizations, and has since transitioned to release under Require Security.
@@ -141,8 +98,3 @@ Aarno Labs is a leading cyber security R&D company that specializes in solving e
 Visit us at [https://www.requiresecurity.com/](https://www.requiresecurity.com/) and [https://aarno-labs.com/](https://aarno-labs.com/)
 
 For bug reports, please open github issues or email contact@requiresecurity.com
-
------------------
-
-
-¹This will simply serve you the static webpage -- no instrumentation information will be sent off your machine

@@ -1,4 +1,4 @@
-const {init} = await import("../../../dist/index.js")
+const {init} = await import("../../../dist/init.js")
 init({privsFile: (import.meta.url + ".privs.json").replace("file://", ""),
       traceGranularity: "file"})
 

@@ -440,7 +440,7 @@ gen_tests([
     "base.test.js", "bench.test.js", "bundlers.test.js",
     "commonjs-fallback.test.js", "context.test.js", "end.test.js",
     "event.test.js", "indexes.test.js", "string-limit.test.js",
-    "string-limit-2.test.js"
+    "string-limit-2.test.js", "thread-management.test.js"
   ]],
   ["through", [
     "async.js", "auto-destroy.js", "buffering.js", "end.js", "index.js"
@@ -521,7 +521,7 @@ gen_tests([
   /////////////////////////////////////////////////////////////////////
   // TODO: It's unclear what is exactly failing here with these tests??
   /////////////////////////////////////////////////////////////////////
-  ["thread-stream", ["thread-management.test.js"]]
+  //["thread-stream", ["thread-management.test.js"]]
 ], test.failing);
 
 // These tests should fail both when instrumented and uninstrumented (we treat

@@ -201,8 +201,29 @@ function getRelativeParent(parent: string) : string | null{
   return null
 }
 
+function resolveFile(filename: string, parent: string, isMain: boolean) {
+  if(filename.startsWith("file://")) {
+    return filename.replace("file://", "")
+  }
+
+  if(filename.startsWith("/")) {
+    return filename
+  }
+
+  try {
+    return M._resolveFilename(filename, parent, isMain)
+  } catch (e) {
+    const parentRequire = createRequire(parent)
+    return parentRequire.resolve(filename)
+  }
+}
+
 const loggedModuleLoads: Set<string> = new Set()
-export function logModuleLoad(requestedModule: string, parent: string, isMain: boolean) {
+export function logModuleLoad(requestedModule: string, parent: string | undefined, isMain: boolean) {
+  if(!parent) {
+    parent = "TOP_LEVEL"
+  }
+
   // I thought requires were always cached, so we wouldn't see the same moduleLoad
   // for the same require. This is not the case, but we don't want to be logging the
   // same module load repeatedly. So, we track what we've seen before
@@ -231,28 +252,20 @@ export function logModuleLoad(requestedModule: string, parent: string, isMain: b
     return
   }
 
-  // If we get here, we're dealing with a non-builtin
-  let resolvedPath
-  try {
-    resolvedPath = M._resolveFilename(requestedModule, parent, isMain)
-  } catch (e) {
-    const parentRequire = createRequire(parent)
-    resolvedPath = parentRequire.resolve(requestedModule)
-  }
-  // try to get an object representing the closest package.json to the id
-  let packageJson: any | null = null
-  if (resolvedPath) {
-    packageJson = getPackageJsonFromPath(resolvedPath)
-    // add package to map for lib trace calculation
-    if (packageJson && packageJson.name?.length != 0 && packageJson.version?.length != 0) {
-      const p: Package = {
-        name: packageJson.name,
-        version: packageJson.version
-      }
+  const resolvedPath = resolveFile(requestedModule, parent, isMain)
 
-      pathToPackageID.set(resolvedPath, p)
+  // try to get an object representing the closest package.json to the id
+  const packageJson = getPackageJsonFromPath(resolvedPath)
+  // add package to map for lib trace calculation
+  if (packageJson && packageJson.name?.length != 0 && packageJson.version?.length != 0) {
+    const p: Package = {
+      name: packageJson.name,
+      version: packageJson.version
     }
+
+    pathToPackageID.set(resolvedPath, p)
   }
+
 
   if(loggingEvents()) {
     const msg = {
