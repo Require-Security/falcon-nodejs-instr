@@ -44,6 +44,7 @@ export function sendStartMessage(config: AgentConfig) {
       pid: process.pid,
       uuid: UUID,
       title: process.argv0,
+      command: process.argv
     },
     host: {
       hostname: os.hostname(),
