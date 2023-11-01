@@ -26,12 +26,12 @@ If you would like to run on our provided demo program instead of your own app, f
 <ol type="1.">
   <li>Go to the root of the node project you would like to instrument</li>
   <li><code>npm install @reqsec/falcon-nodejs-instr</code></li>
-  <li><code>export NODE_OPTIONS="--require @reqsec/falcon-nodejs-instr"</code>
+  <li>Open a new terminal, and run `<code>export NODE_OPTIONS="--require @reqsec/falcon-nodejs-instr"</code>`
   <ul>
-    <li>If you would like to change the dashboard port (or any other settings) for the agent,
-        edit <code>node_modules/@reqsec/falcon-nodejs-instr/dist/index.js</code></li>
-</li>
+    <li>Once you run this, every node process launched from the terminal you ran it in will be instrumented. Only use this terminal for running instrumented apps</li>
   </ul>
+  <li> If you would like to change the dashboard port (or any other settings) for the agent,
+        edit <code>node_modules/@reqsec/falcon-nodejs-instr/dist/index.js</code></li>
   <li>(Re)start your application.</li>
   <li> Setup Dashboard</li>
     <ol type="a">
@@ -47,7 +47,7 @@ If you would like to run on our provided demo program instead of your own app, f
       <li>Load the dashboard by going to <code>localhost:5173</code> </li>
     </ul>
     </ol>
-  <li> Configure host and click 'connect' in the dashboard landing page </li>
+  <li> Configure host and click 'connect' in the dashboard landing page. If your app is large, it may hang for a few seconds as it loads events.</li>
 </ol>
 
 ## Learning

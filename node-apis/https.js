@@ -8,7 +8,7 @@ function getProxy(name) {
   if (spec) {
     return getDefaultProxy({obj: https[name], proxySpec: spec})
   } else {
-    return fs[name]
+    return https[name]
   }
 }
 

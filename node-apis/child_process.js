@@ -8,7 +8,7 @@ function getProxy(name) {
   if (spec) {
     return getDefaultProxy({obj: child_process[name], proxySpec: spec})
   } else {
-    return fs[name]
+    return child_process[name]
   }
 }
 

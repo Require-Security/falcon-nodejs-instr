@@ -18,8 +18,9 @@ export async function initialize({number, port} : {number: number, port: Message
 }
 
 export async function resolve(specifier: string, context: Context, nextResolve: Function ) {
-  if (['fs', 'fs/promises', 'http', 'https', 'child_process'].includes(specifier.replace("node:", ""))) {
-    specifier = join(__dirname, "../node-apis/", specifier + ".js")
+  const spec = specifier.replace("node:", "")
+  if (['fs', 'fs/promises', 'http', 'https', 'child_process'].includes(spec)) {
+    specifier = join(__dirname, "../node-apis/", spec + ".js")
   } else {
     const parentPath = context.parentURL?.replace("file://", '')
     msgPort.postMessage(["logModuleLoad", specifier, parentPath])

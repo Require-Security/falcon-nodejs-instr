@@ -9,11 +9,6 @@ function shouldRun() {
   return majorVersion >= 20
 }
 
-function shouldRun() {
-  const majorVersion = parseInt(process.version.replace(/^v/, '').split(".")[0])
-  return majorVersion >= 20
-}
-
 test('direct import', async function(t) {
   if(!shouldRun()) {
     t.pass()

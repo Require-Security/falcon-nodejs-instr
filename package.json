@@ -1,6 +1,6 @@
 {
   "name": "@reqsec/falcon-nodejs-instr",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Falcon NodeJS instrumentation",
   "author": "Aarno Labs / Require Security",
   "bugs": {
